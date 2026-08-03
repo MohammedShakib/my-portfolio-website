@@ -8,11 +8,13 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center pt-24 pb-12">
-      {/* Background with abstract dark architectural/gradient feel */}
-      <div className="absolute inset-0 z-0 bg-background overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/40 via-background to-background"></div>
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-5"></div>
+      {/* Background matched to the portrait's charcoal studio backdrop */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-[#151515]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(94,94,94,0.44)_0%,rgba(48,48,48,0.38)_25%,rgba(22,22,22,0.92)_55%,rgba(14,14,14,1)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,0.96)_0%,rgba(20,20,20,0.82)_42%,rgba(20,20,20,0.62)_64%,rgba(15,15,15,0.96)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(255,255,255,0.13)_0%,rgba(255,255,255,0.04)_22%,transparent_42%)]" />
+        <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-black/45 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/55 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex-1 flex flex-col justify-center">
