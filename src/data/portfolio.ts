@@ -31,7 +31,7 @@ export const personalInfo = {
   phone: "+880 1874-126156",
   github: "https://github.com/MohammedShakib",
   linkedin: "https://linkedin.com/in/mohammed-shakib-omee",
-  cvLink: "/Mohammed_Shakib_CV.pdf",
+  cvLink: "/assets/documents/Mohammed_Shakib_CV.pdf",
 };
 
 export const navigationLinks = [
