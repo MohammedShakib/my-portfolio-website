@@ -106,8 +106,9 @@ export default function Hero() {
             <div className="relative h-[266px] w-full max-w-[282px] sm:h-[280px] sm:max-w-[300px] md:h-[580px] md:max-w-[520px] lg:h-[650px] lg:max-w-[610px]">
               {/* Subtle warm shadow behind subject */}
               <div className="absolute -inset-10 hidden rounded-full bg-accent/15 blur-3xl md:block"></div>
-              <div className="absolute left-1/2 top-6 h-44 w-48 -translate-x-1/2 rounded-full bg-accent/20 blur-3xl md:hidden"></div>
-              <div className="absolute left-1/2 top-12 h-32 w-36 -translate-x-1/2 rounded-full bg-white/8 blur-2xl md:hidden"></div>
+              <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/22 blur-3xl md:hidden"></div>
+              <div className="absolute left-1/2 top-6 h-52 w-56 -translate-x-1/2 rounded-full bg-white/10 blur-3xl md:hidden"></div>
+              <div className="absolute inset-x-[-18%] bottom-[-18px] h-24 bg-gradient-to-t from-background via-background/72 to-transparent md:hidden"></div>
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
@@ -127,10 +128,10 @@ export default function Hero() {
                   alt={`${personalInfo.name} mobile portrait crop`}
                   fill
                   sizes="92vw"
-                  className="block md:hidden object-contain object-bottom drop-shadow-[0_22px_34px_rgba(0,0,0,0.42)]"
+                  className="block md:hidden object-contain object-bottom drop-shadow-[0_28px_46px_rgba(0,0,0,0.46)]"
                   style={{
-                    maskImage: "radial-gradient(ellipse at 50% 38%, #000 0%, #000 58%, rgba(0,0,0,.86) 73%, rgba(0,0,0,.45) 86%, transparent 100%)",
-                    WebkitMaskImage: "radial-gradient(ellipse at 50% 38%, #000 0%, #000 58%, rgba(0,0,0,.86) 73%, rgba(0,0,0,.45) 86%, transparent 100%)",
+                    maskImage: "linear-gradient(to bottom, #000 0%, #000 76%, rgba(0,0,0,.72) 88%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 76%, rgba(0,0,0,.72) 88%, transparent 100%)",
                   }}
                   preload
                 />
