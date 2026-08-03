@@ -183,7 +183,7 @@ export const featuredProjects = [
       "A social media automation platform for content workflows, scheduling and connected channel management.",
     tags: ["React.js", "Express.js", "Redis", "Supabase", "Railway"],
     image: "/assets/projects/prachar-ai.png",
-    logo: "/assets/logos/prachar-ai.svg",
+    logo: "/assets/projects/prachar-ai-logo-icon.png",
     githubLink: "",
     liveLink: "",
     caseStudyLink: "",
@@ -198,7 +198,7 @@ export const featuredProjects = [
       "A Telegram bot-based workflow that turns product information into marketing-ready visual assets.",
     tags: ["React.js", "Express.js", "Telegram Bot API", "Supabase"],
     image: "/assets/projects/adready.png",
-    logo: "/assets/logos/adready.svg",
+    logo: "/assets/projects/adready-logo.png",
     githubLink: "",
     liveLink: "",
     caseStudyLink: "",
@@ -225,7 +225,7 @@ export const otherProjects = [
     title: "The Multimodal Track",
     description: "A unified web platform for managing text, image and related multimodal workflows.",
     tags: ["React.js", "Express.js", "Firebase", "Railway"],
-    logo: "/assets/logos/multimodal-track.svg",
+    logo: "/assets/projects/the-multimodal-track-logo.png",
     image: "/assets/projects/the-multimodal-track.png",
   },
   {
@@ -233,7 +233,7 @@ export const otherProjects = [
     description:
       "An AI-powered web application featuring interactive dashboards, structured workflows and user-focused intelligent insights.",
     tags: ["React.js", "Express.js", "Redis", "Supabase"],
-    logo: "/assets/logos/mindsense-ai.svg",
+    logo: "/assets/projects/mindsense-ai-logo.png",
     image: "/assets/projects/mindsense-ai.png",
   },
   {
