@@ -78,20 +78,13 @@ export default function Hero() {
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
-                  src="/assets/images/profile-image.jpg"
+                  src="/assets/images/profile-image.png"
                   alt={`${personalInfo.name} professional portrait`}
                   fill
                   sizes="(max-width: 1024px) 90vw, 420px"
-                  className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-[1.03]"
-                  style={{
-                    maskImage:
-                      "radial-gradient(ellipse 72% 72% at 50% 48%, #000 58%, rgba(0,0,0,0.72) 74%, transparent 100%)",
-                    WebkitMaskImage:
-                      "radial-gradient(ellipse 72% 72% at 50% 48%, #000 58%, rgba(0,0,0,0.72) 74%, transparent 100%)",
-                  }}
+                  className="object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.42)] transition-transform duration-700 group-hover:scale-[1.03]"
                   preload
                 />
-                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_48%,rgba(21,21,21,0.42)_76%,rgba(21,21,21,0.95)_100%)]" />
               </div>
             </div>
           </motion.div>

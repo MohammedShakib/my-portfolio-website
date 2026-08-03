@@ -49,7 +49,7 @@ export default function Navbar() {
         <Link href="#home" className="flex items-center gap-3 z-50">
           <div className="relative h-11 w-11 overflow-hidden rounded-full border border-accent/50 bg-background/50 shadow-[0_0_24px_rgba(168,133,94,0.22)]">
             <Image
-              src="/assets/images/profile-image.jpg"
+              src="/assets/images/profile-image.png"
               alt={`${personalInfo.name} portrait`}
               fill
               sizes="44px"
