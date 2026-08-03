@@ -25,7 +25,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl"
+            className="max-w-2xl -mt-8 sm:-mt-10 lg:mt-0 lg:pb-14 xl:pb-20"
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6 text-balance">
               {personalInfo.heroHeading}
