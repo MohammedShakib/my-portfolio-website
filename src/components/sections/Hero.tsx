@@ -28,7 +28,7 @@ export default function Hero() {
             className="max-w-2xl"
           >
             <div className="inline-block px-4 py-1.5 mb-6 border border-accent/30 text-accent text-sm font-medium tracking-wide bg-accent/5">
-              Hello, I&apos;m {personalInfo.name}
+              {personalInfo.heroEyebrow}
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6 text-balance">
@@ -44,7 +44,7 @@ export default function Hero() {
                 href="#projects"
                 className="px-8 py-3.5 bg-accent text-white font-medium hover:bg-accent-hover transition-colors duration-300"
               >
-                View My Projects
+                Explore My Work
               </Link>
               <a
                 href={personalInfo.cvLink}

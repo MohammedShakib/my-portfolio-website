@@ -1,5 +1,23 @@
 import { technicalExpertise } from "@/data/portfolio";
+import TechLogo from "@/components/TechLogo";
 import Link from "next/link";
+
+const logoLabels: Record<string, string> = {
+  docker: "Docker",
+  express: "Express.js",
+  firebase: "Firebase",
+  github: "GitHub",
+  java: "Java",
+  javascript: "JavaScript",
+  nodejs: "Node.js",
+  python: "Python",
+  railway: "Railway",
+  react: "React.js",
+  redis: "Redis",
+  springboot: "Spring Boot",
+  supabase: "Supabase",
+  tailwindcss: "Tailwind CSS",
+};
 
 export default function TechnicalExpertise() {
   return (
@@ -27,18 +45,32 @@ export default function TechnicalExpertise() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {technicalExpertise.map((skill, index) => {
             const Icon = skill.icon;
+            const logos = "logos" in skill ? skill.logos : undefined;
             return (
               <div 
                 key={index}
                 className="group flex flex-col items-center text-center px-4 transition-all duration-300"
               >
-                <div className="mb-6 w-14 h-14 rounded-none border border-white/10 bg-white/5 flex items-center justify-center text-accent group-hover:-translate-y-2 group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300">
-                  <Icon size={24} strokeWidth={1.5} />
+                <div className="mb-6 min-h-14 flex items-center justify-center gap-3">
+                  {logos ? (
+                    logos.map((logo) => (
+                      <span
+                        key={logo}
+                        className="group flex h-14 w-14 items-center justify-center border border-white/10 bg-white/5 transition-colors duration-300 hover:border-accent/50 hover:bg-accent/10"
+                      >
+                        <TechLogo id={logo} label={logoLabels[logo] ?? logo} sizeClass="h-7 w-7" />
+                      </span>
+                    ))
+                  ) : (
+                    <span className="flex h-14 w-14 items-center justify-center border border-white/10 bg-white/5 text-accent group-hover:border-accent/50 group-hover:bg-accent/10 transition-colors duration-300">
+                      <Icon size={24} strokeWidth={1.5} />
+                    </span>
+                  )}
                 </div>
                 <h3 className="font-serif text-xl font-medium mb-3 text-white">
                   {skill.title}
                 </h3>
-                <p className="text-foreground/60 text-sm leading-relaxed max-w-[280px]">
+                <p className="text-foreground/65 text-[15px] leading-7 max-w-[300px]">
                   {skill.description}
                 </p>
               </div>

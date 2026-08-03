@@ -10,21 +10,21 @@ export default function WhatIDo() {
           <div className="w-16 h-[2px] bg-accent mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {whatIDo.map((item, index) => {
             const Icon = item.icon;
             return (
               <div 
                 key={index} 
-                className="group flex flex-col items-center text-center p-8 bg-white/50 hover:bg-white transition-colors duration-500 border border-primary/5 hover:border-accent/20"
+                className="group flex min-h-[310px] flex-col items-start p-7 md:p-8 bg-white/60 hover:bg-white transition-colors duration-300 border border-primary/10 hover:border-accent/45"
               >
-                <div className="mb-6 text-accent group-hover:-translate-y-1 transition-transform duration-300">
-                  <Icon size={40} strokeWidth={1} />
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-accent/30 text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                  <Icon size={28} strokeWidth={1.5} />
                 </div>
-                <h3 className="font-serif text-xl font-medium mb-4 text-primary">
+                <h3 className="font-serif text-xl font-medium mb-4 text-primary leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-primary/70 text-sm leading-relaxed">
+                <p className="text-primary/72 text-[15px] leading-7">
                   {item.description}
                 </p>
               </div>

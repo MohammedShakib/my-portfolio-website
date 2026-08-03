@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { personalInfo, navigationLinks } from "@/data/portfolio";
-import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -40,30 +39,24 @@ export default function Navbar() {
       className={clsx(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-transparent",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-white/5 py-4"
-          : "bg-transparent py-6"
+          ? "bg-background/88 backdrop-blur-md border-white/10 py-4 shadow-lg shadow-black/10"
+          : "bg-background/35 backdrop-blur-sm py-6"
       )}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="#home" className="flex items-center gap-3 z-50">
-          <div className="relative h-11 w-11 overflow-hidden rounded-full border border-accent/50 bg-background/50 shadow-[0_0_24px_rgba(168,133,94,0.22)]">
-            <Image
-              src="/assets/images/profile-image.png"
-              alt={`${personalInfo.name} portrait`}
-              fill
-              sizes="44px"
-              className="object-cover object-[center_28%]"
-            />
+          <div className="h-11 w-11 rounded-full border border-accent/60 bg-background/80 flex items-center justify-center text-accent font-serif text-base shadow-[0_0_24px_rgba(168,133,94,0.18)]">
+            {personalInfo.monogram}
           </div>
-          <span className="font-serif text-xl tracking-wide hidden sm:block">
+          <span className="font-serif text-xl tracking-wide text-white hidden sm:block">
             {personalInfo.logoText}
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-6 text-sm font-medium">
+          <ul className="flex items-center gap-6 text-[14px] font-medium">
             {navigationLinks.map((link) => (
               <li key={link.label}>
                 <Link
