@@ -106,8 +106,7 @@ export default function Hero() {
             <div className="relative h-[266px] w-full max-w-[282px] sm:h-[280px] sm:max-w-[300px] md:h-[580px] md:max-w-[520px] lg:h-[650px] lg:max-w-[610px]">
               {/* Subtle warm shadow behind subject */}
               <div className="absolute -inset-10 hidden rounded-full bg-accent/15 blur-3xl md:block"></div>
-              <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/22 blur-3xl md:hidden"></div>
-              <div className="absolute left-1/2 top-6 h-52 w-56 -translate-x-1/2 rounded-full bg-white/10 blur-3xl md:hidden"></div>
+              <div className="absolute inset-x-[-34%] inset-y-[-18%] bg-[radial-gradient(circle_at_50%_38%,rgba(168,133,94,0.24)_0%,rgba(255,255,255,0.08)_24%,rgba(17,17,17,0)_62%)] md:hidden"></div>
               <div className="absolute inset-x-[-26%] bottom-[-30px] z-10 h-36 bg-gradient-to-t from-[#111111] via-[#111111]/86 via-45% to-transparent md:hidden"></div>
               <div className="absolute inset-y-0 left-[-22%] z-10 w-28 bg-gradient-to-r from-[#111111] via-[#111111]/72 to-transparent md:hidden"></div>
               <div className="absolute inset-y-0 right-[-22%] z-10 w-28 bg-gradient-to-l from-[#111111] via-[#111111]/72 to-transparent md:hidden"></div>
@@ -132,8 +131,8 @@ export default function Hero() {
                   sizes="92vw"
                   className="block md:hidden object-contain object-bottom drop-shadow-[0_28px_46px_rgba(0,0,0,0.46)]"
                   style={{
-                    maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.2) 6%, #000 18%, #000 66%, rgba(0,0,0,.72) 80%, rgba(0,0,0,.25) 91%, transparent 100%)",
-                    WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.2) 6%, #000 18%, #000 66%, rgba(0,0,0,.72) 80%, rgba(0,0,0,.25) 91%, transparent 100%)",
+                    maskImage: "radial-gradient(ellipse 52% 78% at 50% 48%, #000 0%, #000 50%, rgba(0,0,0,.58) 68%, transparent 88%)",
+                    WebkitMaskImage: "radial-gradient(ellipse 52% 78% at 50% 48%, #000 0%, #000 50%, rgba(0,0,0,.58) 68%, transparent 88%)",
                   }}
                   preload
                 />
