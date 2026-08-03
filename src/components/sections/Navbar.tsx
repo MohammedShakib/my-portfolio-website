@@ -45,15 +45,15 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        "sticky md:fixed top-0 left-0 w-full z-50 h-16 md:h-auto transition-all duration-300 ease-in-out border-b border-white/10 md:border-transparent",
+        "fixed top-0 left-0 w-full z-50 h-16 md:h-auto transition-all duration-300 ease-in-out border-b border-transparent pointer-events-none md:pointer-events-auto",
         isScrolled
-          ? "bg-background/92 backdrop-blur-md md:border-white/10 md:py-4 shadow-lg shadow-black/10"
-          : "bg-background/92 md:bg-background/35 backdrop-blur-sm md:py-6"
+          ? "md:bg-background/88 md:backdrop-blur-md md:border-white/10 md:py-4 md:shadow-lg md:shadow-black/10"
+          : "md:bg-background/35 md:backdrop-blur-sm md:py-6"
       )}
     >
-      <div className="container mx-auto px-6 md:px-12 flex h-full md:h-auto items-center justify-between">
+      <div className="container mx-auto px-6 md:px-12 flex h-full md:h-auto items-center justify-end md:justify-between">
         {/* Logo */}
-        <Link href="#home" className="flex min-w-0 items-center gap-3 z-50">
+        <Link href="#home" className="hidden min-w-0 items-center gap-3 z-50 pointer-events-auto md:flex">
           <div className="relative h-10 w-10 md:h-11 md:w-11 overflow-hidden rounded-full border border-accent/60 bg-background/80 shadow-[0_0_24px_rgba(168,133,94,0.18)]">
             <Image
               src="/assets/images/profile-image.png"
@@ -106,7 +106,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-foreground z-50 flex h-11 w-11 items-center justify-center"
+          className="md:hidden text-foreground z-50 flex h-11 w-11 items-center justify-center border border-white/10 bg-background/35 backdrop-blur-sm pointer-events-auto"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
           aria-controls="mobile-navigation"
@@ -124,7 +124,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-x-0 bottom-0 top-16 bg-background flex flex-col items-center justify-center gap-8 px-5"
+              className="fixed inset-0 bg-background flex flex-col items-center justify-center gap-8 px-5 pointer-events-auto"
               aria-label="Mobile navigation"
             >
               <ul className="flex flex-col items-center gap-6 text-xl font-serif">
