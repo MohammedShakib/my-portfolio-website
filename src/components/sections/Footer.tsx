@@ -41,21 +41,25 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-serif text-xl tracking-wide">{personalInfo.logoText}</p>
-              <p className="text-sm text-white/50">CSE student & Junior Developer</p>
+              <p className="text-[14px] text-white/55">CSE student & Junior Developer</p>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm text-white/55">
-            <a href={personalInfo.cvLink} className="hover:text-accent transition-colors">
+          <p className="mx-auto max-w-xs text-center text-[13px] leading-6 text-white/50 md:hidden">
+            Computer Science & Engineering student focused on full-stack and AI-enabled product work.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3 text-sm text-white/55 md:gap-x-5">
+            <a href={personalInfo.cvLink} className="flex min-h-11 items-center px-2 hover:text-accent transition-colors">
               Download CV
             </a>
-            <a href={`mailto:${personalInfo.email}`} className="hover:text-accent transition-colors">
+            <a href={`mailto:${personalInfo.email}`} className="flex min-h-11 items-center px-2 hover:text-accent transition-colors">
               Email
             </a>
-            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="GitHub">
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center hover:text-white transition-colors" aria-label="GitHub">
               <Github size={19} />
             </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn">
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center hover:text-white transition-colors" aria-label="LinkedIn">
               <Linkedin size={19} />
             </a>
             <button
@@ -68,7 +72,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-6 border-t border-white/10 pt-5 text-center text-sm text-white/40 md:text-left">
+        <p className="mt-4 md:mt-6 border-t border-white/10 pt-5 text-center text-[13px] md:text-sm text-white/40 md:text-left">
           (c) {currentYear} {personalInfo.name}. All rights reserved.
         </p>
       </div>

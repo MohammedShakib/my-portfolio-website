@@ -129,25 +129,25 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full min-h-12 bg-transparent border-b border-primary/25 py-3 text-primary focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-accent/35 transition-colors";
+    "w-full min-h-12 bg-transparent border-b border-primary/25 py-3 text-base text-primary focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-accent/35 transition-colors";
   const labelClass = "block text-[13px] font-semibold uppercase tracking-widest text-primary/70 mb-2";
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-background relative border-t border-white/5">
+    <section id="contact" className="py-16 md:py-32 bg-background relative border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
               <span className="h-2 w-2 rounded-full bg-accent"></span>
               {personalInfo.availability}
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">Let&apos;s Connect</h2>
-            <p className="text-foreground/72 text-lg leading-8 mb-12 max-w-lg">
+            <h2 className="text-[32px] md:text-5xl font-serif text-white mb-5 md:mb-6">Let&apos;s Connect</h2>
+            <p className="text-foreground/72 text-base md:text-lg leading-[1.6] md:leading-8 mb-8 md:mb-12 max-w-lg">
               I am open to backend engineering internships, trainee positions, junior opportunities,
               project collaboration and conversations about practical AI products.
             </p>
 
-            <div className="space-y-8 mb-12">
+            <div className="space-y-6 md:space-y-8 mb-10 md:mb-12">
               {[
                 { label: "Location", value: personalInfo.location, icon: MapPin },
                 { label: "Availability", value: personalInfo.availability, icon: Clock },
@@ -160,16 +160,16 @@ export default function Contact() {
                     <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent flex-shrink-0">
                       <Icon size={18} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h4 className="text-[13px] font-semibold uppercase tracking-wider text-white/55 mb-1">
                         {item.label}
                       </h4>
                       {"href" in item ? (
-                        <a href={item.href} className="text-white text-lg leading-7 hover:text-accent transition-colors">
+                        <a href={item.href} className="break-words text-white text-base md:text-lg leading-7 hover:text-accent transition-colors">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-white text-lg leading-7">{item.value}</p>
+                        <p className="break-words text-white text-base md:text-lg leading-7">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -180,16 +180,16 @@ export default function Contact() {
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent flex-shrink-0">
                   <Mail size={18} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h4 className="text-[13px] font-semibold uppercase tracking-wider text-white/55 mb-1">Email</h4>
                   <div className="flex flex-wrap items-center gap-3">
-                    <a href={`mailto:${personalInfo.email}`} className="text-white text-lg hover:text-accent transition-colors">
+                    <a href={`mailto:${personalInfo.email}`} className="break-all text-white text-base md:text-lg hover:text-accent transition-colors">
                       {personalInfo.email}
                     </a>
                     <button
                       type="button"
                       onClick={copyEmail}
-                      className="inline-flex items-center gap-2 border border-white/15 px-3 py-1.5 text-sm text-white/70 hover:border-accent/50 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent transition-colors"
+                      className="inline-flex min-h-11 items-center gap-2 border border-white/15 px-3 py-1.5 text-sm text-white/70 hover:border-accent/50 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent transition-colors"
                     >
                       <Copy size={14} />
                       {isCopied ? "Copied" : "Copy"}
@@ -217,8 +217,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-background-light p-8 md:p-12 shadow-2xl relative lg:max-w-[620px] lg:ml-auto w-full">
-            <h3 className="text-2xl font-serif text-primary mb-8">Send a Message</h3>
+          <div className="bg-background-light p-5 md:p-12 shadow-2xl relative lg:max-w-[620px] lg:ml-auto w-full">
+            <h3 className="text-[24px] md:text-2xl font-serif text-primary mb-7 md:mb-8">Send a Message</h3>
 
             {error && (
               <div className="mb-6 border border-red-600/25 bg-red-600/8 px-4 py-3 text-sm text-red-700">
@@ -234,7 +234,7 @@ export default function Contact() {
               </div>
             ) : null}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
               <input
                 type="text"
                 name="website"
@@ -279,14 +279,14 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="message" className={labelClass}>Message *</label>
-                <textarea id="message" name="message" required rows={4} value={formData.message} onChange={handleChange} className="w-full min-h-32 bg-transparent border-b border-primary/25 py-3 text-primary focus:outline-none focus:border-accent transition-colors resize-none" />
+                <textarea id="message" name="message" required rows={4} value={formData.message} onChange={handleChange} className="w-full min-h-[140px] bg-transparent border-b border-primary/25 py-3 text-base text-primary focus:outline-none focus:border-accent transition-colors resize-none" />
               </div>
 
               <div className="pt-4">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-white py-4 font-medium tracking-wide flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full min-h-12 bg-primary text-white py-4 text-[15px] font-medium tracking-wide flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                   {!isSubmitting && <ArrowRight size={18} />}
