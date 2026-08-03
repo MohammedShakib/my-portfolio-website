@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
 import { personalInfo, navigationLinks } from "@/data/portfolio";
 import Link from "next/link";
 import Image from "next/image";
@@ -106,13 +105,30 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-foreground z-50 flex h-11 w-11 items-center justify-center border border-white/10 bg-background/35 backdrop-blur-sm pointer-events-auto"
+          className="group md:hidden text-foreground z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] shadow-[0_14px_34px_rgba(0,0,0,0.32)] backdrop-blur-md pointer-events-auto transition-colors hover:border-accent/45 hover:bg-accent/10"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
           aria-controls="mobile-navigation"
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <span className="relative flex h-5 w-5 items-center justify-center" aria-hidden="true">
+            <span
+              className={clsx(
+                "absolute h-[1.5px] rounded-full bg-white transition-all duration-300",
+                isMobileMenuOpen
+                  ? "w-5 translate-y-0 rotate-45"
+                  : "w-5 -translate-y-1.5 group-hover:w-4",
+              )}
+            />
+            <span
+              className={clsx(
+                "absolute h-[1.5px] rounded-full bg-white transition-all duration-300",
+                isMobileMenuOpen
+                  ? "w-5 translate-y-0 -rotate-45"
+                  : "w-3.5 translate-y-1.5 group-hover:w-5",
+              )}
+            />
+          </span>
         </button>
 
         {/* Mobile Navigation */}
