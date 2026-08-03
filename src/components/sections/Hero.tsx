@@ -106,10 +106,7 @@ export default function Hero() {
             <div className="relative h-[266px] w-full max-w-[282px] sm:h-[280px] sm:max-w-[300px] md:h-[580px] md:max-w-[520px] lg:h-[650px] lg:max-w-[610px]">
               {/* Subtle warm shadow behind subject */}
               <div className="absolute -inset-10 hidden rounded-full bg-accent/15 blur-3xl md:block"></div>
-              <div className="absolute inset-x-[-34%] inset-y-[-18%] bg-[radial-gradient(circle_at_50%_38%,rgba(168,133,94,0.24)_0%,rgba(255,255,255,0.08)_24%,rgba(17,17,17,0)_62%)] md:hidden"></div>
               <div className="absolute inset-x-[-26%] bottom-[-30px] z-10 h-36 bg-gradient-to-t from-[#111111] via-[#111111]/86 via-45% to-transparent md:hidden"></div>
-              <div className="absolute inset-y-0 left-[-22%] z-10 w-28 bg-gradient-to-r from-[#111111] via-[#111111]/72 to-transparent md:hidden"></div>
-              <div className="absolute inset-y-0 right-[-22%] z-10 w-28 bg-gradient-to-l from-[#111111] via-[#111111]/72 to-transparent md:hidden"></div>
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
