@@ -4,12 +4,12 @@ import { personalInfo, heroFeatures } from "@/data/portfolio";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import { Fraunces, Manrope } from "next/font/google";
 
-const instrumentSerif = Instrument_Serif({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: "400",
   style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
 });
 
 const manrope = Manrope({
@@ -39,18 +39,20 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl lg:pb-14 xl:pb-20"
           >
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent md:hidden">
-              Junior Developer &middot; Software Engineering Student
-            </p>
-            <div className="mb-4 md:hidden">
-              <p className={`${instrumentSerif.className} text-[36px] font-normal italic leading-none text-foreground`}>
-                Hi, I&apos;m
+            <div className="mb-0 md:hidden">
+              <p className={`${manrope.className} mb-2 text-[18px] font-medium leading-[1.2] text-foreground/86`}>
+                Hi, I&rsquo;m
               </p>
-              <h1 className={`${manrope.className} max-w-[340px] text-[clamp(46px,13vw,54px)] font-bold leading-[1.02] tracking-[-0.03em] text-foreground`}>
-                Mohammed Shakib
+              <h1 className="max-w-[340px]">
+                <span className={`${fraunces.className} block text-[clamp(58px,15vw,66px)] font-semibold leading-[0.9] tracking-[-0.04em] text-foreground`}>
+                  Mohammed
+                </span>
+                <span className={`${fraunces.className} block text-[clamp(64px,16vw,72px)] font-medium italic leading-[0.9] tracking-[-0.035em] text-accent`}>
+                  Shakib
+                </span>
               </h1>
             </div>
-            <p className={`${manrope.className} mb-6 text-[26px] font-semibold leading-[1.2] text-accent md:hidden`}>
+            <p className={`${manrope.className} mb-0 mt-6 text-[15px] font-semibold uppercase leading-[1.2] tracking-[0.13em] text-[#d8c4aa] md:hidden`}>
               Junior Developer
             </p>
 
@@ -58,7 +60,7 @@ export default function Hero() {
               {personalInfo.heroHeading}
             </h1>
             
-            <p className={`${manrope.className} mb-0 max-w-[340px] text-base font-normal leading-[1.65] text-foreground/78 md:hidden`}>
+            <p className={`${manrope.className} mt-6 mb-0 max-w-[34ch] text-base font-normal leading-[1.65] text-foreground/78 md:hidden`}>
               I&apos;m a Software Engineering student at United International University and a Junior Developer at Royal Bengal AI, contributing to full-stack and AI-enabled web applications.
             </p>
 
