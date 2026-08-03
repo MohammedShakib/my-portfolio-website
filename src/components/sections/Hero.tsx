@@ -88,7 +88,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Hero Feature Bar */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mt-16 lg:mt-0">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 mt-0">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
