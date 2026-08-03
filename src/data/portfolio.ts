@@ -375,17 +375,28 @@ export const professionalStatement = {
 };
 
 export const techStripLogos = [
+  { name: "Next.js", logo: "nextjs" },
   { name: "React.js", logo: "react" },
+  { name: "TypeScript", logo: "typescript" },
   { name: "JavaScript", logo: "javascript" },
+  { name: "Tailwind CSS", logo: "tailwindcss" },
+  { name: "HTML5", logo: "html5" },
+  { name: "CSS3", logo: "css3" },
   { name: "Node.js", logo: "nodejs" },
   { name: "Express.js", logo: "express" },
   { name: "Spring Boot", logo: "springboot" },
+  { name: "Java", logo: "java" },
   { name: "Python", logo: "python" },
   { name: "Supabase", logo: "supabase" },
   { name: "Firebase", logo: "firebase" },
+  { name: "MongoDB", logo: "mongodb" },
+  { name: "PostgreSQL", logo: "postgresql" },
   { name: "Redis", logo: "redis" },
   { name: "Docker", logo: "docker" },
+  { name: "Git", logo: "git" },
   { name: "Railway", logo: "railway" },
+  { name: "Vercel", logo: "vercel" },
+  { name: "VS Code", logo: "vscode" },
   { name: "GitHub", logo: "github" },
 ];
 

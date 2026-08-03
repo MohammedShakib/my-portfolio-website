@@ -2,10 +2,15 @@ const brandColors: Record<string, string> = {
   docker: "#2496ed",
   express: "#ffffff",
   firebase: "#ffca28",
+  git: "#f05032",
   github: "#ffffff",
+  html5: "#e34f26",
   java: "#f89820",
   javascript: "#f7df1e",
+  mongodb: "#47a248",
+  nextjs: "#ffffff",
   nodejs: "#5fa04e",
+  postgresql: "#4169e1",
   python: "#3776ab",
   railway: "#ffffff",
   react: "#61dafb",
@@ -13,6 +18,9 @@ const brandColors: Record<string, string> = {
   springboot: "#6db33f",
   supabase: "#3ecf8e",
   tailwindcss: "#06b6d4",
+  typescript: "#3178c6",
+  vercel: "#ffffff",
+  vscode: "#007acc",
 };
 
 type TechLogoProps = {
