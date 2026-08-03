@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { professionalCertifications } from "@/data/portfolio";
+import { certifications, professionalCertifications } from "@/data/portfolio";
 import { Award, ExternalLink, FileText, X } from "lucide-react";
 import Image from "next/image";
 
@@ -144,6 +144,46 @@ export default function Certifications() {
               </button>
             </div>
           ) : null}
+
+          <div className="mt-14 border-t border-primary/10 pt-10 md:mt-16 md:pt-12">
+            <div className="mb-7 flex flex-col gap-3 md:mb-9 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
+                  Recognition
+                </p>
+                <h3 className="font-serif text-[28px] leading-tight md:text-4xl">
+                  Awards & Activities
+                </h3>
+              </div>
+              <p className="max-w-xl text-base leading-7 text-primary/68">
+                Project show recognition, participation, workshops and campus learning activities.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {certifications.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <article
+                    key={item.title}
+                    className="flex min-h-[250px] flex-col border border-primary/8 bg-white p-5 shadow-xl shadow-black/[0.045] transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10 md:p-6"
+                  >
+                    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-accent/30 text-accent">
+                      <Icon size={21} strokeWidth={1.6} />
+                    </div>
+                    <span className="mb-3 text-[12px] font-semibold uppercase tracking-widest text-accent">
+                      {item.category}
+                    </span>
+                    <h4 className="mb-3 font-serif text-[20px] font-medium leading-tight text-primary">
+                      {item.title}
+                    </h4>
+                    <p className="text-[15px] leading-7 text-primary/72">{item.description}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -164,7 +204,7 @@ export default function Certifications() {
                   {preview.title}
                 </h3>
                 <p className="mt-1 text-sm text-primary/68">
-                  {preview.issuer} · Issued {preview.issued}
+                  {preview.issuer} - Issued {preview.issued}
                 </p>
               </div>
               <button
