@@ -17,8 +17,8 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/55 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 flex-1 flex flex-col justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 flex-1 flex flex-col justify-center lg:justify-end">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center lg:items-end">
           
           {/* Left Side Content */}
           <motion.div
@@ -70,9 +70,9 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="relative flex justify-center lg:translate-y-14 lg:justify-end lg:self-end"
+            className="relative flex justify-center lg:justify-end lg:self-end"
           >
-            <div className="relative h-[520px] w-full max-w-[520px] sm:h-[600px] lg:h-[690px] lg:max-w-[620px] group">
+            <div className="relative h-[500px] w-full max-w-[520px] sm:h-[580px] lg:h-[650px] lg:max-w-[610px] group">
               {/* Subtle warm shadow behind subject */}
               <div className="absolute -inset-8 bg-accent/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
               
