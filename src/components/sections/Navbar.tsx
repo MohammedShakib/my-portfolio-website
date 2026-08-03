@@ -9,7 +9,7 @@ import {
   Code,
   Download,
   Folder,
-  GraduationCap,
+  Award,
   Home,
   Mail,
   User,
@@ -22,7 +22,7 @@ const navIcons: Record<string, LucideIcon> = {
   Skills: Code,
   Projects: Folder,
   Experience: Briefcase,
-  Education: GraduationCap,
+  Credentials: Award,
   Contact: Mail,
 };
 

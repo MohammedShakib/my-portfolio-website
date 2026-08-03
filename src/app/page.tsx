@@ -7,6 +7,7 @@ import TechnicalExpertise from "@/components/sections/TechnicalExpertise";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
+import Certifications from "@/components/sections/Certifications";
 import Leadership from "@/components/sections/Leadership";
 import ProfessionalStatement from "@/components/sections/ProfessionalStatement";
 import TechStrip from "@/components/sections/TechStrip";
@@ -25,6 +26,7 @@ export default function Home() {
       <FeaturedProjects />
       <Experience />
       <Education />
+      <Certifications />
       <Leadership />
       <ProfessionalStatement />
       <TechStrip />
