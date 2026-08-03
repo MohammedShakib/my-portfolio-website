@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mohammed Shakib | Junior Developer & CSE Student",
+  title: "Mohammed Shakib",
   description:
     "Portfolio of Mohammed Shakib, a Computer Science & Engineering student and Junior Developer at Royal Bengal AI with experience building full-stack web applications, AI-enabled products and automation platforms using React.js, Express.js, Redis, Supabase, Firebase and Railway.",
 };
