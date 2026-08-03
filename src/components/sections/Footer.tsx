@@ -2,6 +2,7 @@
 
 import { personalInfo } from "@/data/portfolio";
 import { ArrowUp } from "lucide-react";
+import Image from "next/image";
 
 const Github = ({ size = 24 }: { size?: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -29,8 +30,14 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col items-center gap-3 text-center md:flex-row md:text-left">
-            <div className="w-11 h-11 rounded-full border border-accent/60 flex items-center justify-center bg-white/5 text-accent font-serif text-base">
-              {personalInfo.monogram}
+            <div className="relative w-11 h-11 overflow-hidden rounded-full border border-accent/60 bg-white/5">
+              <Image
+                src="/assets/images/profile-image.png"
+                alt={`${personalInfo.name} portrait`}
+                fill
+                sizes="44px"
+                className="object-cover object-top"
+              />
             </div>
             <div>
               <p className="font-serif text-xl tracking-wide">{personalInfo.logoText}</p>
