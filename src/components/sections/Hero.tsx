@@ -4,17 +4,24 @@ import { personalInfo, heroFeatures } from "@/data/portfolio";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Fraunces, Manrope } from "next/font/google";
+import { Allura, Cormorant_Garamond, Manrope } from "next/font/google";
 
-const fraunces = Fraunces({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["SOFT", "WONK", "opsz"],
+  weight: "600",
+  fallback: ["Georgia", "serif"],
+});
+
+const allura = Allura({
+  subsets: ["latin"],
+  weight: "400",
+  fallback: ["Brush Script MT", "cursive"],
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "600"],
+  fallback: ["Arial", "sans-serif"],
 });
 
 export default function Hero() {
@@ -40,19 +47,19 @@ export default function Hero() {
             className="max-w-2xl lg:pb-14 xl:pb-20"
           >
             <div className="mb-0 md:hidden">
-              <p className={`${manrope.className} mb-2 text-[18px] font-medium leading-[1.2] text-foreground/86`}>
+              <p className={`${manrope.className} mb-2 text-[18px] font-normal leading-[1.2] text-foreground/86`}>
                 Hi, I&rsquo;m
               </p>
               <h1 className="max-w-[340px]">
-                <span className={`${fraunces.className} block text-[clamp(58px,15vw,66px)] font-semibold leading-[0.9] tracking-[-0.04em] text-foreground`}>
+                <span className={`${cormorantGaramond.className} block text-[clamp(58px,15vw,66px)] font-semibold leading-[0.92] tracking-[-0.035em] text-foreground`}>
                   Mohammed
                 </span>
-                <span className={`${fraunces.className} block text-[clamp(64px,16vw,72px)] font-medium italic leading-[0.9] tracking-[-0.035em] text-accent`}>
+                <span className={`${allura.className} block max-w-full text-[clamp(74px,19vw,84px)] font-normal leading-[0.82] text-accent`}>
                   Shakib
                 </span>
               </h1>
             </div>
-            <p className={`${manrope.className} mb-0 mt-6 text-[15px] font-semibold uppercase leading-[1.2] tracking-[0.13em] text-[#d8c4aa] md:hidden`}>
+            <p className={`${manrope.className} mb-0 mt-6 text-[15px] font-semibold uppercase leading-[1.2] tracking-[0.14em] text-[#d8c4aa] md:hidden`}>
               Junior Developer
             </p>
 
