@@ -108,7 +108,9 @@ export default function Hero() {
               <div className="absolute -inset-10 hidden rounded-full bg-accent/15 blur-3xl md:block"></div>
               <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/22 blur-3xl md:hidden"></div>
               <div className="absolute left-1/2 top-6 h-52 w-56 -translate-x-1/2 rounded-full bg-white/10 blur-3xl md:hidden"></div>
-              <div className="absolute inset-x-[-18%] bottom-[-18px] h-24 bg-gradient-to-t from-background via-background/72 to-transparent md:hidden"></div>
+              <div className="absolute inset-x-[-26%] bottom-[-30px] z-10 h-36 bg-gradient-to-t from-[#111111] via-[#111111]/86 via-45% to-transparent md:hidden"></div>
+              <div className="absolute inset-y-0 left-[-22%] z-10 w-28 bg-gradient-to-r from-[#111111] via-[#111111]/72 to-transparent md:hidden"></div>
+              <div className="absolute inset-y-0 right-[-22%] z-10 w-28 bg-gradient-to-l from-[#111111] via-[#111111]/72 to-transparent md:hidden"></div>
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
@@ -130,8 +132,8 @@ export default function Hero() {
                   sizes="92vw"
                   className="block md:hidden object-contain object-bottom drop-shadow-[0_28px_46px_rgba(0,0,0,0.46)]"
                   style={{
-                    maskImage: "linear-gradient(to bottom, #000 0%, #000 76%, rgba(0,0,0,.72) 88%, transparent 100%)",
-                    WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 76%, rgba(0,0,0,.72) 88%, transparent 100%)",
+                    maskImage: "linear-gradient(to bottom, #000 0%, #000 66%, rgba(0,0,0,.72) 80%, rgba(0,0,0,.25) 91%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 66%, rgba(0,0,0,.72) 80%, rgba(0,0,0,.25) 91%, transparent 100%)",
                   }}
                   preload
                 />
