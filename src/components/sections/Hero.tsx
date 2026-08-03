@@ -66,15 +66,10 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Side Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="relative flex justify-center lg:justify-end lg:self-end"
-          >
-            <div className="relative h-[500px] w-full max-w-[520px] sm:h-[580px] lg:h-[650px] lg:max-w-[610px] group">
+          <div className="relative flex justify-center lg:justify-end lg:self-end">
+            <div className="relative h-[500px] w-full max-w-[520px] sm:h-[580px] lg:h-[650px] lg:max-w-[610px]">
               {/* Subtle warm shadow behind subject */}
-              <div className="absolute -inset-8 bg-accent/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+              <div className="absolute -inset-8 rounded-full bg-accent/10 blur-3xl"></div>
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
@@ -82,12 +77,12 @@ export default function Hero() {
                   alt={`${personalInfo.name} professional portrait`}
                   fill
                   sizes="(max-width: 640px) 92vw, (max-width: 1024px) 520px, 620px"
-                  className="object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.42)] transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.42)]"
                   preload
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
