@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-start lg:justify-center pt-52 sm:pt-44 lg:pt-24 pb-12">
+    <section id="home" className="relative min-h-screen flex flex-col justify-start lg:justify-center pt-16 sm:pt-20 lg:pt-24 pb-12">
       {/* Background matched to the portrait's charcoal studio backdrop */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-[#151515]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(94,94,94,0.44)_0%,rgba(48,48,48,0.38)_25%,rgba(22,22,22,0.92)_55%,rgba(14,14,14,1)_100%)]" />
@@ -25,7 +25,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl mt-4 sm:mt-0 lg:pb-14 xl:pb-20"
+            className="max-w-2xl lg:pb-14 xl:pb-20"
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6 text-balance">
               {personalInfo.heroHeading}
