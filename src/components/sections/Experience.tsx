@@ -32,7 +32,7 @@ export default function Experience() {
                           alt={`${item.company} logo`}
                           width={64}
                           height={64}
-                          className="h-16 w-16 shrink-0"
+                          className="h-16 w-16 shrink-0 rounded-md bg-white p-2 object-contain"
                         />
                         <div>
                           <span className="block text-accent text-[13px] font-medium tracking-widest uppercase mb-2">

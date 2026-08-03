@@ -269,7 +269,7 @@ export const learningJourney = [
     period: "October 2025 - Present",
     title: "Junior Developer",
     company: "Royal Bengal AI",
-    logo: "/assets/logos/royal-bengal-ai.svg",
+    logo: "/assets/logos/royal-bengal-ai-official.png",
     bullets: [
       "Contribute to AI-enabled web applications using React.js, Express.js, Redis, Supabase, Firebase and Railway.",
       "Work on Prachar AI, AdReady, The Multimodal Track, MindSense AI and Campus Twin as part of the product team.",
@@ -280,7 +280,7 @@ export const learningJourney = [
     period: "May 2025 - September 2025",
     title: "Content Writer Intern",
     company: "Privatune",
-    logo: "/assets/logos/privatune.svg",
+    logo: "/assets/logos/privatune-favicon.png",
     bullets: [
       "Designed book layouts and diagrams for readers.",
       "Created academic content for students and general audiences.",
@@ -291,7 +291,7 @@ export const learningJourney = [
     period: "March 2023 - May 2025",
     title: "Content Writer",
     company: "B For Binary",
-    logo: "/assets/logos/b-for-binary.svg",
+    logo: "/assets/logos/b-for-binary-official.png",
     bullets: [
       "Developed educational assessment materials.",
       "Prepared multiple-choice and short-answer question sets.",
