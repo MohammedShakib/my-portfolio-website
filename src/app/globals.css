@@ -36,4 +36,33 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tech-marquee {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .tech-marquee-track {
+    animation: tech-marquee 34s linear infinite;
+    padding-inline: max(1.5rem, calc((100vw - 1536px) / 2 + 3rem));
+  }
+
+  @keyframes tech-marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
