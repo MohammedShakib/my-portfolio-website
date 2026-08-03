@@ -27,9 +27,9 @@ export default function Leadership() {
                 <Image
                   src={item.logo}
                   alt={`${item.organisation} logo`}
-                  width={56}
-                  height={56}
-                  className="h-14 w-14 shrink-0"
+                  width={72}
+                  height={72}
+                  className="h-16 w-16 shrink-0 object-cover"
                 />
                 <div>
                   <p className="text-accent text-[13px] font-medium tracking-widest uppercase mb-2">

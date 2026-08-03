@@ -366,7 +366,7 @@ export const leadershipAndExtracurricular = [
   {
     role: "Member",
     organisation: "UIU Photography Club",
-    logo: "/assets/logos/uiu-photography-club.svg",
+    logo: "/assets/logos/uiu-photography-club-official.jpg",
     date: "December 2022 - Present",
     description: "Participate in photography workshops, club events and group discussions.",
   },
