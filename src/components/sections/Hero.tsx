@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative flex flex-col justify-start pt-14 pb-12 md:min-h-screen lg:justify-center lg:pt-24">
+    <section id="home" className="relative flex flex-col justify-start pt-10 pb-10 md:min-h-screen md:pb-12 lg:justify-center lg:pt-24">
       {/* Background matched to the portrait's charcoal studio backdrop */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-[#151515]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(94,94,94,0.44)_0%,rgba(48,48,48,0.38)_25%,rgba(22,22,22,0.92)_55%,rgba(14,14,14,1)_100%)]" />
@@ -18,7 +18,7 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col justify-start md:flex-1 lg:justify-end">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8 items-center lg:items-end">
+        <div className="grid grid-cols-1 gap-10 md:gap-8 lg:grid-cols-2 lg:gap-8 items-center lg:items-end">
           
           {/* Left Side Content */}
           <motion.div
@@ -27,11 +27,14 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl lg:pb-14 xl:pb-20"
           >
-            <h1 className="mb-3 font-serif text-[38px] leading-[1.05] text-foreground min-[375px]:text-[42px] md:hidden">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent md:hidden">
+              Junior Developer &middot; Software Engineering Student
+            </p>
+            <h1 className="mb-4 font-serif text-[52px] leading-[0.98] text-foreground max-[359px]:text-[48px] min-[390px]:text-[54px] md:hidden">
               Hi, I&apos;m<br />
               Mohammed Shakib
             </h1>
-            <p className="mb-5 font-serif text-[28px] leading-tight text-foreground md:hidden">
+            <p className="mb-6 font-serif text-[30px] leading-tight text-foreground md:hidden">
               Junior Developer
             </p>
 
@@ -39,7 +42,7 @@ export default function Hero() {
               {personalInfo.heroHeading}
             </h1>
             
-            <p className="mb-8 text-base leading-7 text-foreground/78 md:hidden">
+            <p className="mb-0 max-w-[340px] text-base leading-[1.65] text-foreground/78 md:hidden">
               I&apos;m a Software Engineering student at United International University and a Junior Developer at Royal Bengal AI, contributing to full-stack and AI-enabled web applications.
             </p>
 
@@ -75,9 +78,11 @@ export default function Hero() {
 
           {/* Right Side Visual */}
           <div className="relative flex flex-col items-center justify-center lg:items-end lg:justify-end lg:self-end">
-            <div className="relative h-[286px] w-full max-w-[300px] sm:h-[300px] sm:max-w-[320px] md:h-[580px] md:max-w-[520px] lg:h-[650px] lg:max-w-[610px]">
+            <div className="relative h-[266px] w-full max-w-[282px] sm:h-[280px] sm:max-w-[300px] md:h-[580px] md:max-w-[520px] lg:h-[650px] lg:max-w-[610px]">
               {/* Subtle warm shadow behind subject */}
-              <div className="absolute -inset-6 rounded-full bg-accent/12 blur-2xl md:-inset-10 md:bg-accent/15 md:blur-3xl"></div>
+              <div className="absolute -inset-10 hidden rounded-full bg-accent/15 blur-3xl md:block"></div>
+              <div className="absolute left-1/2 top-6 h-44 w-48 -translate-x-1/2 rounded-full bg-accent/20 blur-3xl md:hidden"></div>
+              <div className="absolute left-1/2 top-12 h-32 w-36 -translate-x-1/2 rounded-full bg-white/8 blur-2xl md:hidden"></div>
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
@@ -97,16 +102,16 @@ export default function Hero() {
                   alt={`${personalInfo.name} mobile portrait crop`}
                   fill
                   sizes="92vw"
-                  className="block md:hidden object-contain object-bottom drop-shadow-[0_24px_42px_rgba(0,0,0,0.46)]"
+                  className="block md:hidden object-contain object-bottom drop-shadow-[0_22px_34px_rgba(0,0,0,0.42)]"
                   style={{
-                    maskImage: "linear-gradient(to bottom, #000 0%, #000 82%, rgba(0,0,0,.72) 91%, transparent 100%)",
-                    WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 82%, rgba(0,0,0,.72) 91%, transparent 100%)",
+                    maskImage: "radial-gradient(ellipse at 50% 38%, #000 0%, #000 58%, rgba(0,0,0,.86) 73%, rgba(0,0,0,.45) 86%, transparent 100%)",
+                    WebkitMaskImage: "radial-gradient(ellipse at 50% 38%, #000 0%, #000 58%, rgba(0,0,0,.86) 73%, rgba(0,0,0,.45) 86%, transparent 100%)",
                   }}
                   preload
                 />
               </div>
             </div>
-            <div className="mt-7 flex w-full flex-wrap items-center gap-3 md:hidden max-[389px]:flex-col">
+            <div className="mt-8 flex w-full flex-wrap items-center gap-3 md:hidden max-[389px]:flex-col">
               <Link
                 href="#projects"
                 className="flex min-h-12 flex-1 items-center justify-center bg-accent px-6 py-3 text-center text-[15px] font-medium text-white transition-colors duration-300 hover:bg-accent-hover max-[389px]:w-full"
