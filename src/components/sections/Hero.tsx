@@ -70,18 +70,18 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="relative lg:h-[600px] flex justify-center lg:justify-end items-center"
+            className="relative flex justify-center lg:translate-y-14 lg:justify-end lg:self-end"
           >
-            <div className="relative w-full max-w-md aspect-[4/5] lg:aspect-auto lg:h-full group">
+            <div className="relative h-[520px] w-full max-w-[520px] sm:h-[600px] lg:h-[690px] lg:max-w-[620px] group">
               {/* Subtle warm shadow behind subject */}
               <div className="absolute -inset-8 bg-accent/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
-                  src="/assets/images/profile-image.png"
+                  src="/assets/images/profile-image-zoomed.png"
                   alt={`${personalInfo.name} professional portrait`}
                   fill
-                  sizes="(max-width: 1024px) 90vw, 420px"
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 520px, 620px"
                   className="object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.42)] transition-transform duration-700 group-hover:scale-[1.03]"
                   preload
                 />
