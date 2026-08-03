@@ -4,6 +4,18 @@ import { personalInfo, heroFeatures } from "@/data/portfolio";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Instrument_Serif, Manrope } from "next/font/google";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export default function Hero() {
   return (
@@ -30,11 +42,15 @@ export default function Hero() {
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent md:hidden">
               Junior Developer &middot; Software Engineering Student
             </p>
-            <h1 className="mb-4 font-serif text-[52px] leading-[0.98] text-foreground max-[359px]:text-[48px] min-[390px]:text-[54px] md:hidden">
-              Hi, I&apos;m<br />
-              Mohammed Shakib
-            </h1>
-            <p className="mb-6 font-serif text-[30px] leading-tight text-foreground md:hidden">
+            <div className="mb-4 md:hidden">
+              <p className={`${instrumentSerif.className} text-[36px] font-normal italic leading-none text-foreground`}>
+                Hi, I&apos;m
+              </p>
+              <h1 className={`${manrope.className} max-w-[340px] text-[clamp(46px,13vw,54px)] font-bold leading-[1.02] tracking-[-0.03em] text-foreground`}>
+                Mohammed Shakib
+              </h1>
+            </div>
+            <p className={`${manrope.className} mb-6 text-[26px] font-semibold leading-[1.2] text-accent md:hidden`}>
               Junior Developer
             </p>
 
@@ -42,7 +58,7 @@ export default function Hero() {
               {personalInfo.heroHeading}
             </h1>
             
-            <p className="mb-0 max-w-[340px] text-base leading-[1.65] text-foreground/78 md:hidden">
+            <p className={`${manrope.className} mb-0 max-w-[340px] text-base font-normal leading-[1.65] text-foreground/78 md:hidden`}>
               I&apos;m a Software Engineering student at United International University and a Junior Developer at Royal Bengal AI, contributing to full-stack and AI-enabled web applications.
             </p>
 
