@@ -26,11 +26,11 @@ export const personalInfo = {
   logoText: "Mohammed Shakib",
   monogram: "MS",
   primaryTitle: "Junior Developer & Software Engineering Student",
-  shortTitle: "Junior Full-Stack Developer | Software Engineering Student",
-  heroEyebrow: "JUNIOR DEVELOPER · SOFTWARE ENGINEERING STUDENT",
-  heroHeading: "Hi, I’m Mohammed Shakib —\na Junior Full-Stack Developer",
+  shortTitle: "Junior Developer | Software Engineering Student",
+  heroEyebrow: "JUNIOR DEVELOPER - SOFTWARE ENGINEERING STUDENT",
+  heroHeading: "Hi, I'm Mohammed Shakib -\na Junior Developer",
   heroSupportingText:
-    "I’m a Software Engineering student at United International University and a Junior Developer at Royal Bengal AI. I work with React.js, Express.js, APIs, databases, testing, and deployment across real-world web and AI-enabled projects.",
+    "I'm a Software Engineering student at United International University and a Junior Developer at Royal Bengal AI, contributing to full-stack and AI-enabled web applications through feature implementation, API integration, testing, debugging, and deployment.",
   location: "Dhaka, Bangladesh",
   availability: "Available for junior developer roles and internship opportunities",
   workPreference: "Hybrid or remote collaboration",
@@ -59,7 +59,7 @@ export const heroFeatures = [
   },
   {
     title: "Main Stack",
-    description: "React.js · Express.js · Supabase",
+    description: "React.js - Express.js - Supabase",
     icon: Layers,
   },
   {
@@ -90,34 +90,34 @@ export const whatIDo = [
   {
     title: "Full-Stack Web Development",
     description:
-      "Build responsive web applications using React.js, JavaScript, Tailwind CSS, Node.js and Express.js.",
+      "I contribute to responsive web application features using React.js, JavaScript, Tailwind CSS, Node.js and Express.js.",
     icon: MonitorSmartphone,
   },
   {
     title: "AI-Enabled Product Development",
     description:
-      "Contribute to intelligent web products featuring automated workflows, dashboards, content generation and user-focused AI functionality.",
+      "I work on AI-enabled product features including workflows, dashboards, content generation and user-focused automation.",
     icon: BrainCircuit,
   },
   {
     title: "Automation and Bot Development",
     description:
-      "Develop automated systems and bot-based workflows for content management, marketing and product-image generation.",
+      "I help implement automation and bot-based workflows for content handling, marketing operations and product-image generation.",
     icon: Bot,
   },
   {
     title: "Testing and Deployment",
     description:
-      "Work on API integration, debugging, functional testing, deployment and production maintenance using GitHub, Railway, Supabase and Firebase.",
+      "I support API integration, debugging, functional testing, deployment and production maintenance using GitHub, Railway, Supabase and Firebase.",
     icon: CheckCircle2,
   },
 ];
 
 export const professionalStats = [
-  { label: "Portfolio Projects", value: "9" },
+  { label: "Projects & Contributions", value: "9" },
   { label: "AI-Enabled Projects", value: "5" },
   { label: "Professional Roles", value: "3" },
-  { label: "Awards & Activities", value: "4" },
+  { label: "Awards & Certifications", value: "4" },
 ];
 
 export const technicalExpertise = [
@@ -177,35 +177,47 @@ export const featuredProjects = [
   {
     title: "Prachar AI",
     category: "AI-Powered Social Media Automation",
+    role: "Junior Developer / Project Contributor",
+    contribution:
+      "Contributed to product features, API integration, debugging, testing and deployment support as part of the Royal Bengal AI team.",
     description:
-      "A social media automation platform that helps teams generate, organise, schedule and manage content across connected channels.",
+      "A social media automation platform for content workflows, scheduling and connected channel management.",
     tags: ["React.js", "Express.js", "Redis", "Supabase", "Railway"],
-    image: "/assets/projects/prachar-ai-preview.svg",
+    image: "/assets/projects/prachar-ai.png",
     logo: "/assets/logos/prachar-ai.svg",
     githubLink: "",
     liveLink: "",
+    caseStudyLink: "",
   },
   {
     title: "AdReady",
     category: "Telegram-Based Product Image Creation",
+    role: "Junior Developer / Project Contributor",
+    contribution:
+      "Supported implementation, Telegram Bot API integration, feature testing and debugging for product-image generation workflows.",
     description:
-      "A Telegram bot-based product image creation workflow that converts product information into marketing-ready visual assets.",
+      "A Telegram bot-based workflow that turns product information into marketing-ready visual assets.",
     tags: ["React.js", "Express.js", "Telegram Bot API", "Supabase"],
-    image: "/assets/projects/adready-preview.svg",
+    image: "/assets/projects/adready.png",
     logo: "/assets/logos/adready.svg",
     githubLink: "",
     liveLink: "",
+    caseStudyLink: "",
   },
   {
     title: "Campus Twin",
     category: "Real-Time Smart Campus Digital Twin",
+    role: "Junior Developer / Project Contributor",
+    contribution:
+      "Contributed to dashboard-oriented workflows, API integration, testing, debugging and deployment coordination.",
     description:
-      "A real-time smart campus platform for monitoring classrooms, attendance, transportation, events, parking and emergency activities.",
+      "A smart campus platform concept for monitoring classrooms, attendance, transportation, events, parking and emergency activities.",
     tags: ["React.js", "Express.js", "Redis", "Supabase", "Railway"],
     image: "/assets/projects/campus-twin-preview.svg",
     logo: "/assets/logos/campus-twin.svg",
     githubLink: "",
     liveLink: "",
+    caseStudyLink: "",
   },
 ];
 
@@ -215,6 +227,7 @@ export const otherProjects = [
     description: "A unified web platform for managing text, image and related multimodal workflows.",
     tags: ["React.js", "Express.js", "Firebase", "Railway"],
     logo: "/assets/logos/multimodal-track.svg",
+    image: "/assets/projects/the-multimodal-track.png",
   },
   {
     title: "MindSense AI",
@@ -222,6 +235,7 @@ export const otherProjects = [
       "An AI-powered web application featuring interactive dashboards, structured workflows and user-focused intelligent insights.",
     tags: ["React.js", "Express.js", "Redis", "Supabase"],
     logo: "/assets/logos/mindsense-ai.svg",
+    image: "/assets/projects/mindsense-ai.png",
   },
   {
     title: "Parking Lagbe",
@@ -258,9 +272,9 @@ export const learningJourney = [
     company: "Royal Bengal AI",
     logo: "/assets/logos/royal-bengal-ai.svg",
     bullets: [
-      "Develop and maintain AI-enabled web applications using React.js, Express.js, Redis, Supabase, Firebase and Railway.",
-      "Contribute to Prachar AI, AdReady, The Multimodal Track, MindSense AI and Campus Twin.",
-      "Work with the product team on implementation, API integration, debugging, testing and deployment.",
+      "Contribute to AI-enabled web applications using React.js, Express.js, Redis, Supabase, Firebase and Railway.",
+      "Work on Prachar AI, AdReady, The Multimodal Track, MindSense AI and Campus Twin as part of the product team.",
+      "Support feature implementation, API integration, debugging, testing and deployment.",
     ],
   },
   {
@@ -319,21 +333,25 @@ export const educationList = [
 export const certifications = [
   {
     title: "Champion Award",
+    category: "AWARD",
     description: "Champion in the Electronics Lab at CSE Project Show, 2024",
     icon: Trophy,
   },
   {
     title: "CSE Project Show",
+    category: "PARTICIPATION",
     description: "Participant, 2025",
     icon: Award,
   },
   {
     title: "Speak with Impact",
+    category: "WORKSHOP",
     description: "Completed Speak with Impact: Mastering Professional Communication, 2025",
     icon: Mic,
   },
   {
     title: "Entreprenexus",
+    category: "PROGRAM",
     description: "Participated in Entreprenexus - Turning People Management into Business Strategy, 2025",
     icon: Building2,
   },
@@ -352,7 +370,7 @@ export const leadershipAndExtracurricular = [
 export const professionalStatement = {
   heading: "My Development Approach",
   statement:
-    "I approach development by first understanding the user’s problem, then translating it into a clear workflow and maintainable product structure. My work involves interface implementation, API integration, testing, debugging, and continuous product improvement.",
+    "I approach development by first understanding the user's problem, then translating it into a clear workflow and maintainable product structure. My work involves interface implementation, API integration, testing, debugging, and continuous product improvement.",
   secondaryLine:
     "Through my work at Royal Bengal AI, I have gained practical experience contributing to AI-enabled applications, automation systems and production-focused web platforms.",
 };

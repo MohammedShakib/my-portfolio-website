@@ -9,6 +9,7 @@ import {
   Copy,
   Mail,
   MapPin,
+  Phone,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -49,6 +50,7 @@ const Linkedin = ({ size = 24 }: { size?: number }) => (
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
   const [isCopied, setIsCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -57,6 +59,7 @@ export default function Contact() {
     subject: "",
     opportunity: "",
     message: "",
+    website: "",
   });
 
   const handleChange = (
@@ -66,16 +69,47 @@ export default function Contact() {
   };
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText(personalInfo.email);
-    setIsCopied(true);
-    setTimeout(() => setIsCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(personalInfo.email);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch {
+      setError("Email copy failed. Please use the mailto link instead.");
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
+
+    if (formData.website) {
+      setError("Submission blocked.");
+      return;
+    }
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.opportunity || !formData.message.trim()) {
+      setError("Please complete all required fields.");
+      return;
+    }
+
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const subject = encodeURIComponent(formData.subject || `${formData.opportunity} - ${formData.name}`);
+      const body = encodeURIComponent(
+        [
+          `Name: ${formData.name}`,
+          `Email: ${formData.email}`,
+          formData.company ? `Company / Org: ${formData.company}` : "",
+          `Opportunity Type: ${formData.opportunity}`,
+          "",
+          formData.message,
+        ]
+          .filter(Boolean)
+          .join("\n"),
+      );
+
+      window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
       setIsSubmitting(false);
       setIsSuccess(true);
       setFormData({
@@ -85,14 +119,17 @@ export default function Contact() {
         subject: "",
         opportunity: "",
         message: "",
+        website: "",
       });
-
       setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    } catch {
+      setIsSubmitting(false);
+      setError("Unable to open your email app. Please email me directly.");
+    }
   };
 
   const inputClass =
-    "w-full min-h-12 bg-transparent border-b border-primary/25 py-3 text-primary focus:outline-none focus:border-accent transition-colors";
+    "w-full min-h-12 bg-transparent border-b border-primary/25 py-3 text-primary focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-accent/35 transition-colors";
   const labelClass = "block text-[13px] font-semibold uppercase tracking-widest text-primary/70 mb-2";
 
   return (
@@ -115,6 +152,7 @@ export default function Contact() {
                 { label: "Location", value: personalInfo.location, icon: MapPin },
                 { label: "Availability", value: personalInfo.availability, icon: Clock },
                 { label: "Preferred Work Mode", value: personalInfo.workPreference, icon: Briefcase },
+                { label: "Phone", value: personalInfo.phone, icon: Phone, href: `tel:${personalInfo.phone.replace(/\s+/g, "")}` },
               ].map((item) => {
                 const Icon = item.icon;
                 return (
@@ -126,7 +164,13 @@ export default function Contact() {
                       <h4 className="text-[13px] font-semibold uppercase tracking-wider text-white/55 mb-1">
                         {item.label}
                       </h4>
-                      <p className="text-white text-lg leading-7">{item.value}</p>
+                      {"href" in item ? (
+                        <a href={item.href} className="text-white text-lg leading-7 hover:text-accent transition-colors">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-white text-lg leading-7">{item.value}</p>
+                      )}
                     </div>
                   </div>
                 );
@@ -145,7 +189,7 @@ export default function Contact() {
                     <button
                       type="button"
                       onClick={copyEmail}
-                      className="inline-flex items-center gap-2 border border-white/15 px-3 py-1.5 text-sm text-white/70 hover:border-accent/50 hover:text-accent transition-colors"
+                      className="inline-flex items-center gap-2 border border-white/15 px-3 py-1.5 text-sm text-white/70 hover:border-accent/50 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent transition-colors"
                     >
                       <Copy size={14} />
                       {isCopied ? "Copied" : "Copy"}
@@ -176,15 +220,31 @@ export default function Contact() {
           <div className="bg-background-light p-8 md:p-12 shadow-2xl relative lg:max-w-[620px] lg:ml-auto w-full">
             <h3 className="text-2xl font-serif text-primary mb-8">Send a Message</h3>
 
+            {error && (
+              <div className="mb-6 border border-red-600/25 bg-red-600/8 px-4 py-3 text-sm text-red-700">
+                {error}
+              </div>
+            )}
+
             {isSuccess ? (
               <div className="absolute inset-0 bg-background-light flex flex-col items-center justify-center text-center p-8 z-10 animate-in fade-in duration-500">
                 <CheckCircle2 size={64} className="text-green-600 mb-6" />
-                <h4 className="text-2xl font-serif text-primary mb-2">Message Sent</h4>
-                <p className="text-primary/70">Thank you for reaching out. I will get back to you as soon as possible.</p>
+                <h4 className="text-2xl font-serif text-primary mb-2">Email Draft Opened</h4>
+                <p className="text-primary/70">Your email app should open with the message ready to send.</p>
               </div>
             ) : null}
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className={labelClass}>Full Name *</label>

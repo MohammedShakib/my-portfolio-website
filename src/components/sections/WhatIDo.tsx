@@ -6,7 +6,7 @@ export default function WhatIDo() {
       <div className="container mx-auto px-6 md:px-12">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif mb-6">What I Do</h2>
+          <h2 className="text-4xl md:text-5xl font-serif mb-6">What I Work On</h2>
           <div className="w-16 h-[2px] bg-accent mx-auto"></div>
         </div>
 

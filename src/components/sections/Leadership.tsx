@@ -36,7 +36,7 @@ export default function Leadership() {
                     {item.date}
                   </p>
                   <h3 className="font-serif text-xl md:text-2xl text-white mb-2">
-                    {item.role} · {item.organisation}
+                    {item.role} - {item.organisation}
                   </h3>
                   <p className="text-foreground/72 text-[15px] leading-7">{item.description}</p>
                 </div>

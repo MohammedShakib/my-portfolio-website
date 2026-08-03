@@ -31,7 +31,7 @@ export default function ProfessionalStatement() {
                 alt={`${personalInfo.name} alternate professional portrait treatment`}
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"
-                className="object-cover object-[center_22%] grayscale contrast-110 opacity-85"
+                className="object-cover object-[center_18%] grayscale brightness-125 contrast-110 opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
               <div className="absolute inset-4 border border-white/10 pointer-events-none"></div>

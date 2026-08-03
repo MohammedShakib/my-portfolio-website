@@ -31,21 +31,27 @@ export default function Education() {
                     className="h-14 w-14 shrink-0"
                   />
                   <div className="min-w-0">
-                    <p className="font-serif text-xl text-primary font-medium leading-snug">{edu.degree}</p>
-                    <p className="text-primary/80 text-base mt-1">{edu.institution}</p>
+                    <p className="font-serif text-2xl text-primary font-medium leading-snug">{edu.degree}</p>
+                    <p className="text-primary/82 text-lg mt-1">{edu.institution}</p>
 
-                    <div className="mt-5 grid grid-cols-2 gap-4">
+                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div>
                         <p className="text-[12px] uppercase tracking-widest text-primary/55 font-semibold mb-1">
-                          {edu.expectedGraduation ? "Expected" : "Batch"}
+                          Date
                         </p>
-                        <p className="text-sm font-medium">{edu.expectedGraduation ?? edu.batch}</p>
+                        <p className="text-[15px] font-medium">{edu.date ?? edu.batch}</p>
+                      </div>
+                      <div>
+                        <p className="text-[12px] uppercase tracking-widest text-primary/55 font-semibold mb-1">
+                          {edu.expectedGraduation ? "Expected Graduation" : "Status"}
+                        </p>
+                        <p className="text-[15px] font-medium">{edu.expectedGraduation ?? edu.status}</p>
                       </div>
                       <div>
                         <p className="text-[12px] uppercase tracking-widest text-primary/55 font-semibold mb-1">
                           GPA / CGPA
                         </p>
-                        <p className="text-sm font-medium">{edu.cgpa}</p>
+                        <p className="text-[15px] font-medium">{edu.cgpa}</p>
                       </div>
                     </div>
                   </div>
@@ -70,6 +76,9 @@ export default function Education() {
                     <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-accent/30 text-accent">
                       <Icon size={22} strokeWidth={1.6} />
                     </div>
+                    <span className="mb-3 text-[12px] font-semibold tracking-widest text-accent uppercase">
+                      {cert.category}
+                    </span>
                     <h4 className="font-serif text-lg font-medium text-primary mb-2">
                       {cert.title}
                     </h4>

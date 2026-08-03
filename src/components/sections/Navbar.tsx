@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { personalInfo, navigationLinks } from "@/data/portfolio";
 import Link from "next/link";
+import Image from "next/image";
 import clsx from "clsx";
 
 export default function Navbar() {
@@ -46,8 +47,14 @@ export default function Navbar() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="#home" className="flex items-center gap-3 z-50">
-          <div className="h-11 w-11 rounded-full border border-accent/60 bg-background/80 flex items-center justify-center text-accent font-serif text-base shadow-[0_0_24px_rgba(168,133,94,0.18)]">
-            {personalInfo.monogram}
+          <div className="relative h-11 w-11 overflow-hidden rounded-full border border-accent/60 bg-background/80 shadow-[0_0_24px_rgba(168,133,94,0.18)]">
+            <Image
+              src="/assets/images/profile-image.png"
+              alt={`${personalInfo.name} portrait`}
+              fill
+              sizes="44px"
+              className="object-cover object-top"
+            />
           </div>
           <span className="font-serif text-xl tracking-wide text-white hidden sm:block">
             {personalInfo.logoText}

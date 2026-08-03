@@ -44,16 +44,13 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-lg mb-6 text-white">Navigation</h4>
             <ul className="space-y-3 text-[14px] text-white/65">
-              {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((link) => {
-                const navLink = navigationLinks.find((n) => n.label === link);
-                return (
-                  <li key={link}>
-                    <a href={navLink?.href || "#"} className="hover:text-accent transition-colors">
-                      {link}
-                    </a>
-                  </li>
-                );
-              })}
+              {navigationLinks.map((navLink) => (
+                <li key={navLink.label}>
+                  <a href={navLink.href} className="hover:text-accent transition-colors">
+                    {navLink.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -80,10 +77,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/45 text-sm">© {currentYear} {personalInfo.name}. All rights reserved.</p>
+          <p className="text-white/45 text-sm">(c) {currentYear} {personalInfo.name}. All rights reserved.</p>
 
           <div className="flex items-center gap-6 text-sm text-white/45">
-            <a href="#" className="hover:text-white transition-colors">Privacy Notice</a>
+            <span>Personal portfolio</span>
 
             <div className="flex items-center gap-4 border-l border-white/10 pl-6">
               <a href={personalInfo.github} className="hover:text-white transition-colors" aria-label="GitHub">

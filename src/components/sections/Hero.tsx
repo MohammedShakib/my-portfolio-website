@@ -35,20 +35,20 @@ export default function Hero() {
               {personalInfo.heroHeading}
             </h1>
             
-            <p className="text-lg text-foreground/70 mb-10 text-balance leading-relaxed">
+            <p className="text-lg md:text-xl text-foreground/78 mb-10 text-balance leading-8">
               {personalInfo.heroSupportingText}
             </p>
             
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <Link
                 href="#projects"
-                className="px-8 py-3.5 bg-accent text-white font-medium hover:bg-accent-hover transition-colors duration-300"
+                className="px-8 py-3.5 bg-accent text-white font-medium hover:bg-accent-hover transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
                 Explore My Work
               </Link>
               <a
                 href={personalInfo.cvLink}
-                className="px-8 py-3.5 border border-white/20 text-foreground hover:bg-white/5 transition-colors duration-300"
+                className="px-8 py-3.5 border border-white/25 text-foreground hover:bg-white/5 transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
                 Download CV
               </a>
@@ -69,7 +69,7 @@ export default function Hero() {
           <div className="relative flex justify-center lg:justify-end lg:self-end">
             <div className="relative h-[500px] w-full max-w-[520px] sm:h-[580px] lg:h-[650px] lg:max-w-[610px]">
               {/* Subtle warm shadow behind subject */}
-              <div className="absolute -inset-8 rounded-full bg-accent/10 blur-3xl"></div>
+              <div className="absolute -inset-10 rounded-full bg-accent/15 blur-3xl"></div>
               
               <div className="w-full h-full relative overflow-visible">
                 <Image
@@ -77,7 +77,23 @@ export default function Hero() {
                   alt={`${personalInfo.name} professional portrait`}
                   fill
                   sizes="(max-width: 640px) 92vw, (max-width: 1024px) 520px, 620px"
-                  className="object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.42)]"
+                  className="hidden md:block object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.42)]"
+                  style={{
+                    maskImage: "linear-gradient(to bottom, #000 0%, #000 82%, rgba(0,0,0,.7) 91%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 82%, rgba(0,0,0,.7) 91%, transparent 100%)",
+                  }}
+                  preload
+                />
+                <Image
+                  src="/assets/images/profile-image-mobile.png"
+                  alt={`${personalInfo.name} mobile portrait crop`}
+                  fill
+                  sizes="92vw"
+                  className="block md:hidden object-contain object-bottom drop-shadow-[0_24px_42px_rgba(0,0,0,0.46)]"
+                  style={{
+                    maskImage: "linear-gradient(to bottom, #000 0%, #000 82%, rgba(0,0,0,.72) 91%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 82%, rgba(0,0,0,.72) 91%, transparent 100%)",
+                  }}
                   preload
                 />
               </div>

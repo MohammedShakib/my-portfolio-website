@@ -68,6 +68,17 @@ export default function FeaturedProjects() {
                   {project.description}
                 </p>
 
+                <div className="mb-6 border-l-2 border-accent pl-4">
+                  <p className="text-[12px] font-semibold uppercase tracking-widest text-primary/50 mb-1">
+                    Role
+                  </p>
+                  <p className="text-sm font-medium text-primary mb-3">{project.role}</p>
+                  <p className="text-[12px] font-semibold uppercase tracking-widest text-primary/50 mb-1">
+                    Contribution
+                  </p>
+                  <p className="text-[14px] leading-6 text-primary/70">{project.contribution}</p>
+                </div>
+
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tags.map((tag, tagIndex) => (
                     <span
@@ -79,8 +90,16 @@ export default function FeaturedProjects() {
                   ))}
                 </div>
 
-                {(project.liveLink || project.githubLink) && (
+                {(project.liveLink || project.githubLink || project.caseStudyLink) && (
                   <div className="flex items-center gap-4 pt-6 border-t border-primary/10">
+                    {project.caseStudyLink && (
+                      <a
+                        href={project.caseStudyLink}
+                        className="flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+                      >
+                        View Case Study <ArrowUpRight size={16} />
+                      </a>
+                    )}
                     {project.liveLink && (
                       <a
                         href={project.liveLink}
@@ -107,37 +126,49 @@ export default function FeaturedProjects() {
 
         {otherProjects && otherProjects.length > 0 && (
           <div>
-            <h3 className="text-2xl font-serif mb-8 border-b border-primary/10 pb-4">More Projects</h3>
+            <h3 className="text-3xl font-serif mb-8 border-b border-primary/10 pb-4">Additional Projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {otherProjects.map((project, index) => (
                 <div
                   key={index}
-                  className="group p-6 md:p-7 bg-white border border-primary/10 hover:border-accent/35 transition-colors"
+                  className="group min-h-[260px] p-7 md:p-8 bg-white border border-primary/10 hover:border-accent/35 transition-colors"
                 >
-                  <div className="flex items-start gap-4 mb-5">
+                  <div className="flex items-start gap-5 mb-6">
                     <Image
                       src={project.logo}
                       alt={`${project.title} logo`}
-                      width={48}
-                      height={48}
-                      className="h-12 w-12 shrink-0"
+                      width={60}
+                      height={60}
+                      className="h-[60px] w-[60px] shrink-0"
                     />
                     <div>
-                      <h4 className="text-xl font-serif text-primary mb-2">{project.title}</h4>
-                      <p className="text-primary/72 text-[15px] leading-7">{project.description}</p>
+                      <h4 className="text-2xl font-serif text-primary mb-3">{project.title}</h4>
+                      <p className="text-primary/72 text-base leading-8">{project.description}</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2.5">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="rounded-full border border-primary/15 px-3 py-1 text-[12px] text-primary/65 font-medium"
+                        className="rounded-full border border-primary/15 px-3.5 py-1.5 text-[12px] text-primary/65 font-medium"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
+
+                  {"image" in project && project.image ? (
+                    <div className="relative mt-6 aspect-[16/9] overflow-hidden border border-primary/10 bg-primary/5">
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : null}
 
                   <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent">
                     Project overview <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-1" />
