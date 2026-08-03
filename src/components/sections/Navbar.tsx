@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { personalInfo, navigationLinks } from "@/data/portfolio";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +9,6 @@ import clsx from "clsx";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -33,13 +32,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMobileMenuOpen]);
 
   return (
     <header
@@ -103,76 +95,6 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="group md:hidden text-foreground z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] shadow-[0_14px_34px_rgba(0,0,0,0.32)] backdrop-blur-md pointer-events-auto transition-colors hover:border-accent/45 hover:bg-accent/10"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-          aria-controls="mobile-navigation"
-          aria-expanded={isMobileMenuOpen}
-        >
-          <span className="relative flex h-5 w-5 items-center justify-center" aria-hidden="true">
-            <span
-              className={clsx(
-                "absolute h-[1.5px] rounded-full bg-white transition-all duration-300",
-                isMobileMenuOpen
-                  ? "w-5 translate-y-0 rotate-45"
-                  : "w-5 -translate-y-1.5 group-hover:w-4",
-              )}
-            />
-            <span
-              className={clsx(
-                "absolute h-[1.5px] rounded-full bg-white transition-all duration-300",
-                isMobileMenuOpen
-                  ? "w-5 translate-y-0 -rotate-45"
-                  : "w-3.5 translate-y-1.5 group-hover:w-5",
-              )}
-            />
-          </span>
-        </button>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.nav
-              id="mobile-navigation"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-background flex flex-col items-center justify-center gap-8 px-5 pointer-events-auto"
-              aria-label="Mobile navigation"
-            >
-              <ul className="flex flex-col items-center gap-6 text-xl font-serif">
-                {navigationLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={clsx(
-                        "transition-colors",
-                        activeSection === link.href.substring(1)
-                          ? "text-accent"
-                          : "text-foreground/80"
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <a
-                    href={personalInfo.cvLink}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-accent transition-colors"
-                  >
-                    Download CV
-                  </a>
-                </li>
-              </ul>
-            </motion.nav>
-          )}
-        </AnimatePresence>
       </div>
     </header>
   );
