@@ -74,18 +74,24 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-md aspect-[4/5] lg:aspect-auto lg:h-full group">
               {/* Subtle warm shadow behind subject */}
-              <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+              <div className="absolute -inset-8 bg-accent/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
               
-              <div className="w-full h-full border border-white/10 bg-primary/30 relative overflow-hidden">
+              <div className="w-full h-full relative overflow-visible">
                 <Image
                   src="/assets/images/profile-image.jpg"
                   alt={`${personalInfo.name} professional portrait`}
                   fill
                   sizes="(max-width: 1024px) 90vw, 420px"
                   className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-[1.03]"
+                  style={{
+                    maskImage:
+                      "radial-gradient(ellipse 72% 72% at 50% 48%, #000 58%, rgba(0,0,0,0.72) 74%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(ellipse 72% 72% at 50% 48%, #000 58%, rgba(0,0,0,0.72) 74%, transparent 100%)",
+                  }}
                   preload
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_48%,rgba(21,21,21,0.42)_76%,rgba(21,21,21,0.95)_100%)]" />
               </div>
             </div>
           </motion.div>
