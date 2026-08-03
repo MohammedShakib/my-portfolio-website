@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center pt-32 sm:pt-36 lg:pt-24 pb-12">
+    <section id="home" className="relative min-h-screen flex flex-col justify-start lg:justify-center pt-40 sm:pt-36 lg:pt-24 pb-12">
       {/* Background matched to the portrait's charcoal studio backdrop */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-[#151515]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(94,94,94,0.44)_0%,rgba(48,48,48,0.38)_25%,rgba(22,22,22,0.92)_55%,rgba(14,14,14,1)_100%)]" />
@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/55 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 flex-1 flex flex-col justify-center lg:justify-end">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 flex-1 flex flex-col justify-start lg:justify-end">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center lg:items-end">
           
           {/* Left Side Content */}
