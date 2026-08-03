@@ -25,11 +25,11 @@ export const personalInfo = {
   name: "Mohammed Shakib",
   logoText: "Mohammed Shakib",
   monogram: "MS",
-  primaryTitle: "Junior Developer & Software Engineering Student",
-  shortTitle: "Junior Developer | Software Engineering Student",
+  primaryTitle: "Junior Developer & Computer Science & Engineering Student",
+  shortTitle: "Junior Developer | CSE Student",
   heroHeading: "Hi, I'm Mohammed Shakib -\na Junior Developer",
   heroSupportingText:
-    "I'm a Software Engineering student at United International University and a Junior Developer at Royal Bengal AI, contributing to full-stack and AI-enabled web applications through feature implementation, API integration, testing, debugging, and deployment.",
+    "I'm a Computer Science & Engineering student at United International University and a Junior Developer at Royal Bengal AI, contributing to full-stack and AI-enabled web applications through feature implementation, API integration, testing, debugging, and deployment.",
   location: "Dhaka, Bangladesh",
   availability: "Available for junior developer roles and internship opportunities",
   workPreference: "Hybrid or remote collaboration",
@@ -70,14 +70,14 @@ export const heroFeatures = [
 
 export const aboutMeInfo = {
   intro:
-    "I am a motivated Software Engineering student at United International University with professional experience as a Junior Developer at Royal Bengal AI. I have hands-on experience building, testing, deploying and maintaining full-stack web applications and AI-enabled products.",
+    "I am a motivated Computer Science & Engineering student at United International University with professional experience as a Junior Developer at Royal Bengal AI. I have hands-on experience building, testing, deploying and maintaining full-stack web applications and AI-enabled products.",
   additional:
     "My work includes feature implementation, API integration, debugging, testing and deployment. I am particularly interested in full-stack development, automation and user-focused AI-enabled product work.",
   blocks: [
     { label: "Current Position", value: "Junior Developer at Royal Bengal AI", icon: Briefcase },
     {
       label: "Education",
-      value: "B.Sc. in Software Engineering at United International University",
+      value: "B.Sc. in Computer Science & Engineering at United International University",
       icon: GraduationCap,
     },
     { label: "Technical Focus", value: "Full-Stack Development and AI-Enabled Products", icon: Code },
@@ -302,29 +302,35 @@ export const learningJourney = [
 
 export const educationList = [
   {
-    degree: "B.Sc. in Software Engineering",
+    degree: "B.Sc. in Computer Science & Engineering",
     institution: "United International University",
-    logo: "/assets/logos/uiu.svg",
+    logo: "/assets/logos/uiu-official-cropped.png",
     location: "Dhaka, Bangladesh",
     date: "February 2022 - Present",
     expectedGraduation: "June 2026",
-    cgpa: "2.40 / 4.00",
+    score: "2.40 / 4.00",
+    scoreLabel: "CGPA",
+    scoreHidden: true,
     status: "Undergraduate",
   },
   {
     degree: "Higher Secondary Certificate - HSC",
     institution: "Shaheed Police Smrity College",
-    logo: "/assets/logos/spsc.svg",
+    logo: "/assets/logos/spsc-official.png",
     batch: "2020",
-    cgpa: "5.00 / 5.00",
+    score: "5.00 / 5.00",
+    scoreLabel: "GPA",
+    scoreHidden: false,
     status: "Completed",
   },
   {
     degree: "Secondary School Certificate - SSC",
     institution: "Monipur High School",
-    logo: "/assets/logos/mhs.svg",
+    logo: "/assets/logos/mhs-official.webp",
     batch: "2018",
-    cgpa: "5.00 / 5.00",
+    score: "5.00 / 5.00",
+    scoreLabel: "GPA",
+    scoreHidden: false,
     status: "Completed",
   },
 ];
@@ -402,7 +408,7 @@ export const techStripLogos = [
 
 export const contactOptions = [
   "Junior Developer Opportunity",
-  "Software Engineering Internship",
+  "Software Development Internship",
   "Full-Stack Development",
   "Project Collaboration",
   "Freelance Project",

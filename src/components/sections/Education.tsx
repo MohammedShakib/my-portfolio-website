@@ -26,9 +26,9 @@ export default function Education() {
                   <Image
                     src={edu.logo}
                     alt={`${edu.institution} logo`}
-                    width={56}
-                    height={56}
-                    className="h-14 w-14 shrink-0"
+                    width={72}
+                    height={72}
+                    className="h-16 w-16 shrink-0 object-contain"
                   />
                   <div className="min-w-0">
                     <p className="font-serif text-2xl text-primary font-medium leading-snug">{edu.degree}</p>
@@ -49,9 +49,20 @@ export default function Education() {
                       </div>
                       <div>
                         <p className="text-[12px] uppercase tracking-widest text-primary/55 font-semibold mb-1">
-                          GPA / CGPA
+                          {edu.scoreLabel}
                         </p>
-                        <p className="text-[15px] font-medium">{edu.cgpa}</p>
+                        <p className="text-[15px] font-medium">
+                          {edu.scoreHidden ? (
+                            <span
+                              aria-label={`${edu.scoreLabel} hidden`}
+                              className="inline-flex select-none items-center rounded-sm bg-primary/10 px-2 py-0.5 text-primary/35 blur-[3px]"
+                            >
+                              **** / ****
+                            </span>
+                          ) : (
+                            edu.score
+                          )}
+                        </p>
                       </div>
                     </div>
                   </div>

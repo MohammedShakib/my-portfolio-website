@@ -36,7 +36,7 @@ export default function Footer() {
               <span className="font-serif text-2xl tracking-wide">{personalInfo.logoText}</span>
             </div>
             <p className="text-white/65 text-[15px] leading-7 max-w-xs">
-              Software Engineering student and Junior Developer focused on full-stack web applications,
+              Computer Science & Engineering student and Junior Developer focused on full-stack web applications,
               AI-enabled products, automation and user-focused product work.
             </p>
           </div>
