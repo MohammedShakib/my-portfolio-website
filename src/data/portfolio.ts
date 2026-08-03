@@ -27,7 +27,6 @@ export const personalInfo = {
   monogram: "MS",
   primaryTitle: "Junior Developer & Software Engineering Student",
   shortTitle: "Junior Developer | Software Engineering Student",
-  heroEyebrow: "JUNIOR DEVELOPER - SOFTWARE ENGINEERING STUDENT",
   heroHeading: "Hi, I'm Mohammed Shakib -\na Junior Developer",
   heroSupportingText:
     "I'm a Software Engineering student at United International University and a Junior Developer at Royal Bengal AI, contributing to full-stack and AI-enabled web applications through feature implementation, API integration, testing, debugging, and deployment.",

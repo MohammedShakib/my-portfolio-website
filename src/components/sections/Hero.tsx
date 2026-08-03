@@ -27,10 +27,6 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <div className="inline-block px-4 py-1.5 mb-6 border border-accent/30 text-accent text-sm font-medium tracking-wide bg-accent/5">
-              {personalInfo.heroEyebrow}
-            </div>
-            
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6 text-balance">
               {personalInfo.heroHeading}
             </h1>
