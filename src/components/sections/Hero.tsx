@@ -2,6 +2,7 @@
 
 import { personalInfo, heroFeatures } from "@/data/portfolio";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -25,7 +26,7 @@ export default function Hero() {
             className="max-w-2xl"
           >
             <div className="inline-block px-4 py-1.5 mb-6 border border-accent/30 text-accent text-sm font-medium tracking-wide bg-accent/5">
-              Hello, I’m {personalInfo.name}
+              Hello, I&apos;m {personalInfo.name}
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6 text-balance">
@@ -73,12 +74,16 @@ export default function Hero() {
               {/* Subtle warm shadow behind subject */}
               <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
               
-              <div className="w-full h-full border border-white/10 bg-primary/30 relative overflow-hidden flex items-center justify-center">
-                {/* Placeholder for professional portrait */}
-                <div className="text-center p-8 text-foreground/40 font-serif">
-                  <div className="text-6xl mb-4 opacity-20">{personalInfo.monogram}</div>
-                  <p className="text-sm uppercase tracking-widest">Professional Portrait Space</p>
-                </div>
+              <div className="w-full h-full border border-white/10 bg-primary/30 relative overflow-hidden">
+                <Image
+                  src="/assets/images/profile-image.jpg"
+                  alt={`${personalInfo.name} professional portrait`}
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 420px"
+                  className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-[1.03]"
+                  preload
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
               </div>
             </div>
           </motion.div>
