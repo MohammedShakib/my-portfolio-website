@@ -27,9 +27,6 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl lg:pb-14 xl:pb-20"
           >
-            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-accent md:hidden">
-              Junior Developer &middot; Software Engineering Student
-            </p>
             <h1 className="mb-3 font-serif text-[38px] leading-[1.05] text-foreground min-[375px]:text-[42px] md:hidden">
               Hi, I&apos;m<br />
               Mohammed Shakib
