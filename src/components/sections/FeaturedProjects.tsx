@@ -41,7 +41,7 @@ export default function FeaturedProjects() {
               <div className="relative aspect-[16/10] md:aspect-[4/3] overflow-hidden bg-primary/5">
                 <Image
                   src={project.image}
-                  alt={`${project.title} project preview`}
+                  alt={project.imageAlt || `${project.title} project preview`}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -49,10 +49,10 @@ export default function FeaturedProjects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-transparent" />
                 <Image
                   src={project.logo}
-                  alt={`${project.title} logo`}
-                  width={48}
-                  height={48}
-                  className="absolute left-4 top-4 h-11 w-11 md:left-5 md:top-5 md:h-12 md:w-12"
+                  alt={project.logoAlt || `${project.title} logo`}
+                  width={project.logoWidth || 48}
+                  height={project.logoHeight || 48}
+                  className={project.logoClassName || "absolute left-4 top-4 h-11 w-11 md:left-5 md:top-5 md:h-12 md:w-12 object-contain"}
                 />
 
                 <div className="absolute bottom-4 left-4 right-4 md:left-6 md:right-6">
