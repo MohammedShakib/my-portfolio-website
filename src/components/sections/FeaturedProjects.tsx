@@ -47,13 +47,7 @@ export default function FeaturedProjects() {
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-transparent" />
-                <Image
-                  src={project.logo}
-                  alt={project.logoAlt || `${project.title} logo`}
-                  width={project.logoWidth || 48}
-                  height={project.logoHeight || 48}
-                  className={project.logoClassName || "absolute left-4 top-4 h-11 w-11 md:left-5 md:top-5 md:h-12 md:w-12 object-contain"}
-                />
+
 
                 <div className="absolute bottom-4 left-4 right-4 md:left-6 md:right-6">
                   <span className="inline-block px-3 py-1 bg-accent/90 text-white text-[12px] font-medium tracking-wide mb-3">
