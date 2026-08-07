@@ -216,7 +216,7 @@ export const featuredProjects = [
     logo: "/assets/projects/CampusTwin-logo.png",
     imageAlt: "Campus Twin smart campus dashboard",
     logoAlt: "Campus Twin logo",
-    logoClassName: "absolute left-4 top-4 h-auto w-24 md:left-5 md:top-5 md:w-32 object-contain bg-white/10 backdrop-blur-md p-2 rounded-lg",
+    logoClassName: "absolute left-4 top-4 h-auto w-24 md:left-5 md:top-5 md:w-32 object-contain",
     logoWidth: 128,
     logoHeight: 48,
     githubLink: "",
