@@ -1,5 +1,5 @@
 import { featuredProjects, otherProjects } from "@/data/portfolio";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Bot } from "lucide-react";
 import Image from "next/image";
 
 const Github = ({ size = 24 }: { size?: number }) => (
@@ -17,6 +17,44 @@ const Github = ({ size = 24 }: { size?: number }) => (
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4" />
   </svg>
 );
+
+const techLogos: Record<string, string> = {
+  "CSS": "css3",
+  "Express.js": "express",
+  "Firebase": "firebase",
+  "HTML": "html5",
+  "Java": "java",
+  "JavaScript": "javascript",
+  "React.js": "react",
+  "Redis": "redis",
+  "Spring Boot": "springboot",
+  "Supabase": "supabase",
+  "Tailwind CSS": "tailwindcss",
+};
+
+function TechBadge({ tag }: { tag: string }) {
+  const logo = techLogos[tag];
+
+  return (
+    <span
+      aria-label={tag}
+      title={tag}
+      className="inline-flex h-9 w-9 items-center justify-center border border-primary/15 bg-white text-primary/65 transition-colors hover:border-accent/40 hover:bg-accent/5 md:h-10 md:w-10"
+    >
+      {logo ? (
+        <Image
+          src={`/assets/logos/${logo}.svg`}
+          alt=""
+          width={24}
+          height={24}
+          className="h-5 w-5 object-contain md:h-6 md:w-6"
+        />
+      ) : (
+        <Bot size={20} aria-hidden="true" strokeWidth={1.8} />
+      )}
+    </span>
+  );
+}
 
 export default function FeaturedProjects() {
   return (
@@ -81,12 +119,7 @@ export default function FeaturedProjects() {
 
                 <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
                   {project.tags.slice(0, 4).map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-2.5 py-1 text-[12px] border border-primary/20 text-primary/65 bg-primary/5"
-                    >
-                      {tag}
-                    </span>
+                    <TechBadge key={tagIndex} tag={tag} />
                   ))}
                 </div>
 
@@ -149,12 +182,7 @@ export default function FeaturedProjects() {
 
                   <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="rounded-full border border-primary/15 px-3 py-1 text-[12px] text-primary/65 font-medium"
-                      >
-                        {tag}
-                      </span>
+                      <TechBadge key={tagIndex} tag={tag} />
                     ))}
                   </div>
 
