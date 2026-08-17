@@ -242,6 +242,13 @@ export const otherProjects = [
     image: "/assets/projects/mindsense-ai.png",
   },
   {
+    title: "SilverGYM",
+    description:
+      "A digital fitness membership platform for discovering partner gyms, comparing plans and managing gym access.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    logo: "/assets/logos/silver-gym-logo.png",
+  },
+  {
     title: "Parking Lagbe",
     description: "A responsive web application for finding and booking available parking spaces.",
     tags: ["HTML", "Tailwind CSS", "JavaScript", "React.js"],

@@ -25,11 +25,14 @@ const techLogos: Record<string, string> = {
   "HTML": "html5",
   "Java": "java",
   "JavaScript": "javascript",
+  "Next.js": "nextjs",
+  "Railway": "railway",
   "React.js": "react",
   "Redis": "redis",
   "Spring Boot": "springboot",
   "Supabase": "supabase",
   "Tailwind CSS": "tailwindcss",
+  "TypeScript": "typescript",
 };
 
 function TechBadge({ tag }: { tag: string }) {
