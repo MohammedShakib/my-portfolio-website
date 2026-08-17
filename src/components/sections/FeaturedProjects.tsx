@@ -1,6 +1,9 @@
+"use client";
+
 import { featuredProjects, otherProjects } from "@/data/portfolio";
-import { ArrowUpRight, Bot } from "lucide-react";
+import { ArrowUpRight, Bot, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const Github = ({ size = 24 }: { size?: number }) => (
   <svg
@@ -17,6 +20,8 @@ const Github = ({ size = 24 }: { size?: number }) => (
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4" />
   </svg>
 );
+
+const additionalProjectsPreviewCount = 3;
 
 const techLogos: Record<string, string> = {
   "CSS": "css3",
@@ -60,6 +65,12 @@ function TechBadge({ tag }: { tag: string }) {
 }
 
 export default function FeaturedProjects() {
+  const [showAllAdditionalProjects, setShowAllAdditionalProjects] = useState(false);
+  const hasMoreAdditionalProjects = otherProjects.length > additionalProjectsPreviewCount;
+  const visibleAdditionalProjects = showAllAdditionalProjects
+    ? otherProjects
+    : otherProjects.slice(0, additionalProjectsPreviewCount);
+
   return (
     <section id="projects" className="py-16 md:py-24 bg-background-light text-primary">
       <div className="container mx-auto px-6 md:px-12">
@@ -164,7 +175,7 @@ export default function FeaturedProjects() {
           <div>
             <h3 className="text-[28px] md:text-3xl font-serif mb-6 md:mb-8 border-b border-primary/10 pb-4">Additional Projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {otherProjects.map((project, index) => (
+              {visibleAdditionalProjects.map((project, index) => (
                 <div
                   key={index}
                   className="group min-h-0 p-5 md:p-6 bg-white border border-primary/10 hover:border-accent/35 transition-colors"
@@ -203,6 +214,24 @@ export default function FeaturedProjects() {
                 </div>
               ))}
             </div>
+
+            {hasMoreAdditionalProjects ? (
+              <div className="mt-8 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() => setShowAllAdditionalProjects((current) => !current)}
+                  className="inline-flex min-h-11 items-center justify-center gap-2 border border-primary/20 bg-white px-5 text-sm font-medium text-primary transition-colors hover:border-accent/40 hover:text-accent"
+                  aria-expanded={showAllAdditionalProjects}
+                >
+                  {showAllAdditionalProjects ? "Show Less" : "View More"}
+                  {showAllAdditionalProjects ? (
+                    <ChevronUp size={16} aria-hidden="true" />
+                  ) : (
+                    <ChevronDown size={16} aria-hidden="true" />
+                  )}
+                </button>
+              </div>
+            ) : null}
           </div>
         )}
       </div>
