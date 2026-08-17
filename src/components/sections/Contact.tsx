@@ -1,10 +1,8 @@
 "use client";
 
-import { contactOptions, personalInfo } from "@/data/portfolio";
+import { personalInfo } from "@/data/portfolio";
 import {
-  ArrowRight,
   Briefcase,
-  CheckCircle2,
   Clock,
   Copy,
   Mail,
@@ -48,25 +46,7 @@ const Linkedin = ({ size = 24 }: { size?: number }) => (
 );
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState("");
   const [isCopied, setIsCopied] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    subject: "",
-    opportunity: "",
-    message: "",
-    website: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const copyEmail = async () => {
     try {
@@ -74,69 +54,22 @@ export default function Contact() {
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 2000);
     } catch {
-      setError("Email copy failed. Please use the mailto link instead.");
+      window.location.href = `mailto:${personalInfo.email}`;
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-
-    if (formData.website) {
-      setError("Submission blocked.");
-      return;
-    }
-
-    if (!formData.name.trim() || !formData.email.trim() || !formData.opportunity || !formData.message.trim()) {
-      setError("Please complete all required fields.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const subject = encodeURIComponent(formData.subject || `${formData.opportunity} - ${formData.name}`);
-      const body = encodeURIComponent(
-        [
-          `Name: ${formData.name}`,
-          `Email: ${formData.email}`,
-          formData.company ? `Company / Org: ${formData.company}` : "",
-          `Opportunity Type: ${formData.opportunity}`,
-          "",
-          formData.message,
-        ]
-          .filter(Boolean)
-          .join("\n"),
-      );
-
-      window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        subject: "",
-        opportunity: "",
-        message: "",
-        website: "",
-      });
-      setTimeout(() => setIsSuccess(false), 5000);
-    } catch {
-      setIsSubmitting(false);
-      setError("Unable to open your email app. Please email me directly.");
-    }
-  };
-
-  const inputClass =
-    "w-full min-h-12 bg-transparent border-b border-primary/25 py-3 text-base text-primary focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-accent/35 transition-colors";
-  const labelClass = "block text-[13px] font-semibold uppercase tracking-widest text-primary/70 mb-2";
+  const contactItems = [
+    { label: "Location", value: personalInfo.location, icon: MapPin },
+    { label: "Availability", value: personalInfo.availability, icon: Clock },
+    { label: "Preferred Work Mode", value: personalInfo.workPreference, icon: Briefcase },
+    { label: "Phone", value: personalInfo.phone, icon: Phone, href: `tel:${personalInfo.phone.replace(/\s+/g, "")}` },
+  ];
 
   return (
     <section id="contact" className="py-16 md:py-32 bg-background relative border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
-          <div>
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-10 md:mb-14 max-w-2xl">
             <div className="mb-5 inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
               <span className="h-2 w-2 rounded-full bg-accent"></span>
               {personalInfo.availability}
@@ -146,17 +79,13 @@ export default function Contact() {
               I am open to backend engineering internships, trainee positions, junior opportunities,
               project collaboration and conversations about practical AI products.
             </p>
+          </div>
 
-            <div className="space-y-6 md:space-y-8 mb-10 md:mb-12">
-              {[
-                { label: "Location", value: personalInfo.location, icon: MapPin },
-                { label: "Availability", value: personalInfo.availability, icon: Clock },
-                { label: "Preferred Work Mode", value: personalInfo.workPreference, icon: Briefcase },
-                { label: "Phone", value: personalInfo.phone, icon: Phone, href: `tel:${personalInfo.phone.replace(/\s+/g, "")}` },
-              ].map((item) => {
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {contactItems.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} className="flex items-start gap-4">
+                  <div key={item.label} className="flex items-start gap-4 border-b border-white/10 pb-6">
                     <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent flex-shrink-0">
                       <Icon size={18} />
                     </div>
@@ -176,7 +105,7 @@ export default function Contact() {
                 );
               })}
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 border-b border-white/10 pb-6 md:col-span-2">
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent flex-shrink-0">
                   <Mail size={18} />
                 </div>
@@ -199,7 +128,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div>
+            <div className="mt-10 md:mt-12">
               <h4 className="text-[13px] font-semibold uppercase tracking-wider text-white/55 mb-4">
                 Connect Professionally
               </h4>
@@ -215,85 +144,6 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="bg-background-light p-5 md:p-12 shadow-2xl relative lg:max-w-[620px] lg:ml-auto w-full">
-            <h3 className="text-[24px] md:text-2xl font-serif text-primary mb-7 md:mb-8">Send a Message</h3>
-
-            {error && (
-              <div className="mb-6 border border-red-600/25 bg-red-600/8 px-4 py-3 text-sm text-red-700">
-                {error}
-              </div>
-            )}
-
-            {isSuccess ? (
-              <div className="absolute inset-0 bg-background-light flex flex-col items-center justify-center text-center p-8 z-10 animate-in fade-in duration-500">
-                <CheckCircle2 size={64} className="text-green-600 mb-6" />
-                <h4 className="text-2xl font-serif text-primary mb-2">Email Draft Opened</h4>
-                <p className="text-primary/70">Your email app should open with the message ready to send.</p>
-              </div>
-            ) : null}
-
-            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
-              <input
-                type="text"
-                name="website"
-                value={formData.website}
-                onChange={handleChange}
-                className="hidden"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-              />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className={labelClass}>Full Name *</label>
-                  <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className={inputClass} />
-                </div>
-                <div>
-                  <label htmlFor="email" className={labelClass}>Email Address *</label>
-                  <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className={inputClass} />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="company" className={labelClass}>Company / Org</label>
-                  <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className={inputClass} />
-                </div>
-                <div>
-                  <label htmlFor="opportunity" className={labelClass}>Opportunity Type *</label>
-                  <select id="opportunity" name="opportunity" required value={formData.opportunity} onChange={handleChange} className={`${inputClass} appearance-none cursor-pointer`}>
-                    <option value="" disabled>Select an option</option>
-                    {contactOptions.map((opt) => (
-                      <option key={opt} value={opt}>{opt}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className={labelClass}>Subject</label>
-                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} className={inputClass} />
-              </div>
-
-              <div>
-                <label htmlFor="message" className={labelClass}>Message *</label>
-                <textarea id="message" name="message" required rows={4} value={formData.message} onChange={handleChange} className="w-full min-h-[140px] bg-transparent border-b border-primary/25 py-3 text-base text-primary focus:outline-none focus:border-accent transition-colors resize-none" />
-              </div>
-
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full min-h-12 bg-primary text-white py-4 text-[15px] font-medium tracking-wide flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                  {!isSubmitting && <ArrowRight size={18} />}
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
       </div>
     </section>

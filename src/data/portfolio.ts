@@ -498,11 +498,3 @@ export const techStripLogos = [
   { name: "GitHub", logo: "github" },
 ];
 
-export const contactOptions = [
-  "Junior Developer Opportunity",
-  "Software Development Internship",
-  "Full-Stack Development",
-  "Project Collaboration",
-  "Freelance Project",
-  "General Message",
-];
