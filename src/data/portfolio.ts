@@ -247,26 +247,6 @@ export const otherProjects = [
     tags: ["HTML", "Tailwind CSS", "JavaScript", "React.js"],
     logo: "/assets/logos/parking-lagbe.svg",
   },
-  {
-    title: "CGPA Calculator",
-    description:
-      "A responsive client-side application that allows students to calculate their CGPA accurately through a simple interface.",
-    tags: ["HTML", "Tailwind CSS", "JavaScript"],
-    logo: "/assets/logos/cgpa-calculator.svg",
-  },
-  {
-    title: "Book Management System",
-    description: "A full-stack inventory management application featuring RESTful APIs and a structured Java backend.",
-    tags: ["Java", "Spring Boot"],
-    logo: "/assets/logos/book-management.svg",
-  },
-  {
-    title: "Bara Koto?",
-    description:
-      "A React-based real-time bus fare estimation tool designed to simplify public transportation planning.",
-    tags: ["HTML", "Tailwind CSS", "JavaScript", "React.js"],
-    logo: "/assets/logos/bara-koto.svg",
-  },
 ];
 
 export const learningJourney = [
