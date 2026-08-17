@@ -32,12 +32,12 @@ export default function ProfessionalStatement() {
             <div className="relative w-full max-w-md h-full overflow-hidden bg-background border border-white/10">
               <Image
                 src="/assets/images/profile-image.png"
-                alt={`${personalInfo.name} alternate professional portrait treatment`}
+                alt={`${personalInfo.name} professional portrait`}
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"
-                className="object-cover object-[center_18%] grayscale brightness-125 contrast-110 opacity-95 md:opacity-90"
+                className="object-cover object-[center_18%]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/45 via-transparent to-transparent"></div>
               <div className="absolute inset-4 border border-white/10 pointer-events-none"></div>
             </div>
           </div>

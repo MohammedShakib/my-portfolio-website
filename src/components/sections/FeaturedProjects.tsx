@@ -127,31 +127,31 @@ export default function FeaturedProjects() {
         {otherProjects && otherProjects.length > 0 && (
           <div>
             <h3 className="text-[28px] md:text-3xl font-serif mb-6 md:mb-8 border-b border-primary/10 pb-4">Additional Projects</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {otherProjects.map((project, index) => (
                 <div
                   key={index}
-                  className="group min-h-0 p-5 md:min-h-[260px] md:p-8 bg-white border border-primary/10 hover:border-accent/35 transition-colors"
+                  className="group min-h-0 p-5 md:p-6 bg-white border border-primary/10 hover:border-accent/35 transition-colors"
                 >
-                  <div className="flex items-start gap-4 md:gap-5 mb-5 md:mb-6">
+                  <div className="flex items-start gap-4 mb-4">
                     <Image
                       src={project.logo}
                       alt={`${project.title} logo`}
                       width={60}
                       height={60}
-                      className="h-10 w-10 shrink-0 md:h-[60px] md:w-[60px]"
+                      className="h-10 w-10 shrink-0 md:h-12 md:w-12"
                     />
                     <div>
-                      <h4 className="text-[17px] md:text-2xl font-serif text-primary mb-2 md:mb-3">{project.title}</h4>
-                      <p className="text-primary/72 text-sm md:text-base leading-6 md:leading-8 overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">{project.description}</p>
+                      <h4 className="text-[17px] md:text-xl font-serif text-primary mb-2">{project.title}</h4>
+                      <p className="text-primary/72 text-sm leading-6 overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">{project.description}</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 3).map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="rounded-full border border-primary/15 px-3 py-1.5 text-[12px] text-primary/65 font-medium md:px-3.5"
+                        className="rounded-full border border-primary/15 px-3 py-1 text-[12px] text-primary/65 font-medium"
                       >
                         {tag}
                       </span>
@@ -159,20 +159,16 @@ export default function FeaturedProjects() {
                   </div>
 
                   {"image" in project && project.image ? (
-                    <div className="relative mt-5 md:mt-6 aspect-[16/10] md:aspect-[16/9] overflow-hidden border border-primary/10 bg-primary/5">
+                    <div className="relative mt-4 aspect-[16/9] md:aspect-[16/8] overflow-hidden border border-primary/10 bg-primary/5">
                       <Image
                         src={project.image}
                         alt={`${project.title} preview`}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover"
                       />
                     </div>
                   ) : null}
-
-                  <div className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-accent">
-                    Project overview <ArrowUpRight size={16} />
-                  </div>
                 </div>
               ))}
             </div>
