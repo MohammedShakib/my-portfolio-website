@@ -247,6 +247,7 @@ export const otherProjects = [
       "A digital fitness membership platform for discovering partner gyms, comparing plans and managing gym access.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     logo: "/assets/logos/silver-gym-logo.png",
+    image: "/assets/projects/silver-gym.png",
   },
   {
     title: "Parking Lagbe",
