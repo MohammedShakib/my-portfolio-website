@@ -142,7 +142,7 @@ export default function TechnicalExpertise() {
   const [openSkill, setOpenSkill] = useState(mobileSkillCategories[0]?.title ?? "");
 
   return (
-    <section id="skills" className="relative py-16 md:py-28 bg-background overflow-hidden">
+    <section id="skills" className="relative py-16 md:py-20 lg:py-24 xl:py-28 bg-background overflow-hidden">
       {/* Background with abstract code/tech pattern (using grid and gradient overlay) */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,white,transparent)]"></div>
@@ -152,8 +152,8 @@ export default function TechnicalExpertise() {
       <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none"></div>
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-20">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12 relative z-20">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12 lg:mb-16">
           <h2 className="text-[32px] md:text-5xl font-serif text-white mb-5 md:mb-6">
             Technical Skills & Tools
           </h2>
@@ -218,7 +218,7 @@ export default function TechnicalExpertise() {
           })}
         </div>
 
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 xl:gap-y-14">
           {technicalExpertise.map((skill, index) => {
             const Icon = skill.icon;
             const logos = "logos" in skill ? skill.logos : undefined;

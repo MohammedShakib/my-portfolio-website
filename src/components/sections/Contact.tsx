@@ -67,7 +67,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-12 md:py-20 bg-background relative border-t border-white/5">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent">

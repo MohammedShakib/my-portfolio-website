@@ -34,8 +34,8 @@ export default function Certifications() {
   }, [preview]);
 
   return (
-    <section id="certifications" className="bg-background-light pb-16 text-primary md:pb-24">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="certifications" className="bg-background-light pb-16 text-primary md:pb-20 lg:pb-24">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 grid gap-6 border-t border-primary/10 pt-14 md:mb-14 md:grid-cols-[0.95fr_1.05fr] md:pt-20">
             <div>

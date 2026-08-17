@@ -7,7 +7,7 @@ export default function Leadership() {
 
   return (
     <section className="py-16 md:py-20 bg-primary text-white border-t border-white/5">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 md:gap-6 mb-8 md:mb-10">
             <div>
@@ -23,7 +23,7 @@ export default function Leadership() {
 
           <div className="grid grid-cols-1 md:grid-cols-[1fr_0.85fr] gap-5 md:gap-6">
             {leadershipAndExtracurricular.map((item) => (
-              <div key={item.organisation} className="p-5 md:p-8 border border-white/10 bg-white/5 flex gap-4 md:gap-5">
+              <div key={item.organisation} className="p-5 md:p-6 lg:p-8 border border-white/10 bg-white/5 flex gap-4 md:gap-5">
                 <Image
                   src={item.logo}
                   alt={`${item.organisation} logo`}
@@ -43,7 +43,7 @@ export default function Leadership() {
               </div>
             ))}
 
-            <div className="border border-white/10 bg-white/[0.035] p-5 md:p-8 flex items-center gap-4 md:gap-5">
+            <div className="border border-white/10 bg-white/[0.035] p-5 md:p-6 lg:p-8 flex items-center gap-4 md:gap-5">
               <div className="flex h-12 w-12 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-full border border-accent/30 text-accent">
                 <Camera size={22} strokeWidth={1.5} />
               </div>

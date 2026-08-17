@@ -26,7 +26,7 @@ const manrope = Manrope({
 
 export default function Hero() {
   return (
-    <section id="home" className="relative flex flex-col justify-start pt-10 pb-10 md:min-h-screen md:pb-12 lg:justify-center lg:pt-24">
+    <section id="home" className="relative flex flex-col justify-start pt-10 pb-10 md:min-h-[760px] md:pb-12 lg:justify-center lg:pt-20 xl:min-h-screen xl:pt-24">
       {/* Background matched to the portrait's charcoal studio backdrop */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-[#151515]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(94,94,94,0.44)_0%,rgba(48,48,48,0.38)_25%,rgba(22,22,22,0.92)_55%,rgba(14,14,14,1)_100%)]" />
@@ -36,7 +36,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/55 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col justify-start md:flex-1 lg:justify-end">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12 relative z-10 flex flex-col justify-start md:flex-1 lg:justify-end">
         <div className="grid grid-cols-1 gap-10 md:gap-8 lg:grid-cols-2 lg:gap-8 items-center lg:items-end">
           
           {/* Left Side Content */}
@@ -44,7 +44,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl lg:pb-14 xl:pb-20"
+            className="max-w-2xl lg:pb-10 xl:pb-20"
           >
             <div className="mb-0 md:hidden">
               <p className={`${manrope.className} mb-2 text-[18px] font-normal leading-[1.2] text-foreground/86`}>
@@ -103,7 +103,7 @@ export default function Hero() {
 
           {/* Right Side Visual */}
           <div className="relative flex flex-col items-center justify-center lg:items-end lg:justify-end lg:self-end">
-            <div className="relative h-[266px] w-full max-w-[282px] sm:h-[280px] sm:max-w-[300px] md:h-[580px] md:max-w-[520px] lg:h-[650px] lg:max-w-[610px]">
+            <div className="relative h-[266px] w-full max-w-[282px] sm:h-[280px] sm:max-w-[300px] md:h-[500px] md:max-w-[460px] lg:h-[590px] lg:max-w-[560px] xl:h-[650px] xl:max-w-[610px]">
               {/* Subtle warm shadow behind subject */}
               <div className="absolute -inset-10 hidden rounded-full bg-accent/15 blur-3xl md:block"></div>
               <div className="absolute inset-x-[-26%] bottom-[-30px] z-10 h-36 bg-gradient-to-t from-[#111111] via-[#111111]/86 via-45% to-transparent md:hidden"></div>
@@ -113,7 +113,7 @@ export default function Hero() {
                   src="/assets/images/profile-image-zoomed.png"
                   alt={`${personalInfo.name} professional portrait`}
                   fill
-                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 520px, 620px"
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 460px, (max-width: 1280px) 560px, 620px"
                   className="hidden md:block object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.42)]"
                   style={{
                     maskImage: "linear-gradient(to bottom, #000 0%, #000 82%, rgba(0,0,0,.7) 91%, transparent 100%)",
@@ -155,7 +155,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Hero Feature Bar */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 mt-8 md:mt-0">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12 relative z-10 mt-8 md:mt-0">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

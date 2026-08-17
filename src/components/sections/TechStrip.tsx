@@ -3,7 +3,7 @@ import { techStripLogos } from "@/data/portfolio";
 
 export default function TechStrip() {
   return (
-    <section className="border-y border-primary/10 bg-white py-8 md:py-14 overflow-hidden">
+    <section className="border-y border-primary/10 bg-white py-8 md:py-10 lg:py-14 overflow-hidden">
       <div className="tech-marquee no-scrollbar">
         <div className="tech-marquee-track">
           {[0, 1].map((groupIndex) => (

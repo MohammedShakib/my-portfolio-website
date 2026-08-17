@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function ProfessionalStatement() {
   return (
-    <section className="py-16 md:py-32 bg-primary text-white overflow-hidden relative">
+    <section className="py-16 md:py-24 xl:py-32 bg-primary text-white overflow-hidden relative">
       <div className="absolute top-0 right-0 hidden w-[800px] h-[800px] bg-accent/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 md:block"></div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12 relative z-10">
         <h2 className="mb-8 text-accent font-serif text-[32px] md:hidden">
           {professionalStatement.heading}
         </h2>
@@ -28,7 +28,7 @@ export default function ProfessionalStatement() {
             </div>
           </div>
 
-          <div className="relative order-1 aspect-[4/3] w-full flex justify-center md:order-2 lg:justify-end md:h-[520px] md:aspect-auto">
+          <div className="relative order-1 aspect-[4/3] w-full flex justify-center md:order-2 lg:justify-end md:h-[440px] md:aspect-auto lg:h-[520px]">
             <div className="relative w-full max-w-md h-full overflow-hidden bg-background border border-white/10">
               <Image
                 src="/assets/images/profile-image.png"

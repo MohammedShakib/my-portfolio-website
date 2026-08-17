@@ -2,8 +2,8 @@ import { aboutMeInfo } from "@/data/portfolio";
 
 export default function AboutMe() {
   return (
-    <section id="about" className="py-16 md:py-28 bg-background-light text-primary relative">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="about" className="py-16 md:py-20 lg:py-24 xl:py-28 bg-background-light text-primary relative">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-7 md:mb-8">
             <h2 className="text-[32px] md:text-5xl font-serif">About Me</h2>

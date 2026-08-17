@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Experience() {
   return (
     <section id="experience" className="py-16 md:py-20 bg-background text-white">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <h2 className="text-[32px] md:text-5xl font-serif mb-5 md:mb-6">Professional Experience</h2>
           <div className="w-16 h-[1px] bg-accent mx-auto"></div>
@@ -13,7 +13,7 @@ export default function Experience() {
         <div className="max-w-6xl mx-auto relative">
           <div className="absolute left-3 top-0 bottom-0 w-px bg-accent/45 md:left-1/2 md:-translate-x-1/2"></div>
 
-          <div className="space-y-6 md:space-y-10">
+          <div className="space-y-6 md:space-y-8 lg:space-y-10">
             {learningJourney.map((item, index) => {
               const isEven = index % 2 === 0;
               return (
@@ -22,10 +22,10 @@ export default function Experience() {
 
                   <div
                     className={`w-full pl-10 md:w-[calc(50%-1.5rem)] md:pl-0 ${
-                      isEven ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
+                      isEven ? "md:mr-auto md:pr-6 lg:pr-8" : "md:ml-auto md:pl-6 lg:pl-8"
                     }`}
                   >
-                    <div className="border border-white/12 bg-white/[0.055] p-5 md:p-7 hover:border-accent/35 transition-colors duration-300">
+                    <div className="border border-white/12 bg-white/[0.055] p-5 md:p-6 lg:p-7 hover:border-accent/35 transition-colors duration-300">
                       <div className="flex items-start gap-3 md:gap-4 mb-5">
                         <Image
                           src={item.logo}

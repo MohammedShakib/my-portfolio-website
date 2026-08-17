@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Education() {
   return (
-    <section id="credentials" className="py-16 md:py-24 bg-background-light text-primary">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="credentials" className="py-16 md:py-20 lg:py-24 bg-background-light text-primary">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <h2 className="text-[32px] md:text-5xl font-serif mb-5 md:mb-6">Education</h2>
           <div className="w-16 h-[2px] bg-accent mx-auto"></div>

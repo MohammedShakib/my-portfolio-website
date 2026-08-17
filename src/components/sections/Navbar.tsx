@@ -55,7 +55,7 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        "pointer-events-none fixed left-5 top-1/2 z-50 hidden -translate-y-1/2 md:block",
+        "pointer-events-none fixed left-5 top-1/2 z-50 hidden -translate-y-1/2 2xl:block",
         isScrolled ? "opacity-100" : "opacity-95"
       )}
     >

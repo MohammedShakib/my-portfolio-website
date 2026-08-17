@@ -72,9 +72,9 @@ export default function FeaturedProjects() {
     : otherProjects.slice(0, additionalProjectsPreviewCount);
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-background-light text-primary">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-6">
+    <section id="projects" className="py-16 md:py-20 lg:py-24 bg-background-light text-primary">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 lg:mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-[32px] md:text-5xl font-serif mb-5 md:mb-6">Featured Projects</h2>
             <p className="text-primary/72 text-base md:text-lg leading-[1.6] md:leading-8">
@@ -84,7 +84,7 @@ export default function FeaturedProjects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-14 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-7 xl:gap-8 mb-14 md:mb-16 lg:mb-20">
           {featuredProjects.map((project, index) => (
             <div
               key={index}
@@ -95,7 +95,7 @@ export default function FeaturedProjects() {
                   src={project.image}
                   alt={project.imageAlt || `${project.title} project preview`}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-transparent" />
@@ -174,7 +174,7 @@ export default function FeaturedProjects() {
         {otherProjects && otherProjects.length > 0 && (
           <div>
             <h3 className="text-[28px] md:text-3xl font-serif mb-6 md:mb-8 border-b border-primary/10 pb-4">Additional Projects</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
               {visibleAdditionalProjects.map((project, index) => (
                 <div
                   key={index}
@@ -206,7 +206,7 @@ export default function FeaturedProjects() {
                         src={project.image}
                         alt={`${project.title} preview`}
                         fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                         className="object-cover"
                       />
                     </div>
