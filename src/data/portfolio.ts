@@ -246,7 +246,7 @@ export const otherProjects = [
     description:
       "A digital fitness membership platform for discovering partner gyms, comparing plans and managing gym access.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    logo: "/assets/logos/silver-gym-logo.png",
+    logo: "/assets/projects/silver-gym-icon.png",
     image: "/assets/projects/silver-gym.png",
   },
   {
