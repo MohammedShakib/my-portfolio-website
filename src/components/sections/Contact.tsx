@@ -66,26 +66,43 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-32 bg-background relative border-t border-white/5">
+    <section id="contact" className="py-12 md:py-20 bg-background relative border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-10 md:mb-14 max-w-2xl">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+          <div>
             <div className="mb-5 inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
               <span className="h-2 w-2 rounded-full bg-accent"></span>
               {personalInfo.availability}
             </div>
             <h2 className="text-[32px] md:text-5xl font-serif text-white mb-5 md:mb-6">Let&apos;s Connect</h2>
-            <p className="text-foreground/72 text-base md:text-lg leading-[1.6] md:leading-8 mb-8 md:mb-12 max-w-lg">
+            <p className="text-foreground/72 text-base md:text-lg leading-[1.6] md:leading-8 max-w-lg">
               I am open to backend engineering internships, trainee positions, junior opportunities,
               project collaboration and conversations about practical AI products.
             </p>
+
+            <div className="mt-8 md:mt-10">
+              <h4 className="text-[13px] font-semibold uppercase tracking-wider text-white/55 mb-4">
+                Connect Professionally
+              </h4>
+              <div className="flex items-center gap-4">
+                <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary hover:border-white transition-all duration-300" aria-label="GitHub">
+                  <Github size={21} />
+                </a>
+                <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all duration-300" aria-label="LinkedIn">
+                  <Linkedin size={21} />
+                </a>
+                <a href={`mailto:${personalInfo.email}`} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:text-white hover:border-accent transition-all duration-300" aria-label="Email">
+                  <Mail size={21} />
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
             {contactItems.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} className="flex items-start gap-4 border-b border-white/10 pb-6">
+                  <div key={item.label} className="flex items-start gap-4 border-b border-white/10 pb-5">
                     <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent flex-shrink-0">
                       <Icon size={18} />
                     </div>
@@ -105,7 +122,7 @@ export default function Contact() {
                 );
               })}
 
-              <div className="flex items-start gap-4 border-b border-white/10 pb-6 md:col-span-2">
+              <div className="flex items-start gap-4 border-b border-white/10 pb-5 md:col-span-2">
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent flex-shrink-0">
                   <Mail size={18} />
                 </div>
@@ -125,23 +142,6 @@ export default function Contact() {
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-10 md:mt-12">
-              <h4 className="text-[13px] font-semibold uppercase tracking-wider text-white/55 mb-4">
-                Connect Professionally
-              </h4>
-              <div className="flex items-center gap-4">
-                <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary hover:border-white transition-all duration-300" aria-label="GitHub">
-                  <Github size={21} />
-                </a>
-                <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all duration-300" aria-label="LinkedIn">
-                  <Linkedin size={21} />
-                </a>
-                <a href={`mailto:${personalInfo.email}`} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:text-white hover:border-accent transition-all duration-300" aria-label="Email">
-                  <Mail size={21} />
-                </a>
               </div>
             </div>
         </div>
