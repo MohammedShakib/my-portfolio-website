@@ -251,9 +251,11 @@ export const otherProjects = [
   },
   {
     title: "Parking Lagbe",
-    description: "A responsive web application for finding and booking available parking spaces.",
-    tags: ["HTML", "Tailwind CSS", "JavaScript", "React.js"],
-    logo: "/assets/logos/parking-lagbe.svg",
+    description:
+      "A Bangladesh-focused parking and space-sharing platform for discovering Dhaka parking, booking spots, and managing host listings.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    logo: "/assets/projects/parking-lagbe-logo.png",
+    image: "/assets/projects/parking-lagbe.png",
   },
 ];
 

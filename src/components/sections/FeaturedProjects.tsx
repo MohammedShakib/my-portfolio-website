@@ -195,7 +195,7 @@ export default function FeaturedProjects() {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                    {project.tags.slice(0, 4).map((tag, tagIndex) => (
                       <TechBadge key={tagIndex} tag={tag} />
                     ))}
                   </div>
