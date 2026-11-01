@@ -257,6 +257,30 @@ export const otherProjects = [
     logo: "/assets/projects/parking-lagbe-logo.png",
     image: "/assets/projects/parking-lagbe.png",
   },
+  {
+    title: "InkWise",
+    description:
+      "A privacy-first browser tool that cleans scanned pages and AI-generated notes for ink-friendly printing with local batch image processing.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Web Workers"],
+    logo: "/assets/projects/inkwise-logo.png",
+    image: "/assets/projects/inkwise.png",
+  },
+  {
+    title: "Kagoj Potro",
+    description:
+      "A privacy-first PDF toolkit for converting, organizing, compressing, OCR and signing documents, with files processed locally in the browser.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Tesseract.js"],
+    logo: "/assets/projects/kagoj-potro-logo.png",
+    image: "/assets/projects/kagoj-potro.png",
+  },
+  {
+    title: "GemBridge",
+    description:
+      "A local authenticated gateway that lets OpenAI-compatible apps use a signed-in Gemini Web session, with automatic session sync and optional private Tailscale access.",
+    tags: ["Python", "Chrome Extension", "Tauri", "Tailscale"],
+    logo: "/assets/projects/gembridge-logo.png",
+    image: "/assets/projects/gembridge.png",
+  },
 ];
 
 export const learningJourney = [

@@ -31,6 +31,7 @@ const techLogos: Record<string, string> = {
   "Java": "java",
   "JavaScript": "javascript",
   "Next.js": "nextjs",
+  "Python": "python",
   "Railway": "railway",
   "React.js": "react",
   "Redis": "redis",
