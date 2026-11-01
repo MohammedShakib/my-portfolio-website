@@ -277,7 +277,17 @@ export const otherProjects = [
     title: "GemBridge",
     description:
       "A local authenticated gateway that lets OpenAI-compatible apps use a signed-in Gemini Web session, with automatic session sync and optional private Tailscale access.",
-    tags: ["Python", "Chrome Extension", "Tauri", "Tailscale"],
+    tags: [
+      "Python",
+      "JavaScript",
+      "PowerShell",
+      "Rust",
+      "TypeScript",
+      "CSS",
+      "Chrome Extension",
+      "Tauri",
+      "Tailscale",
+    ],
     logo: "/assets/projects/gembridge-logo.png",
     image: "/assets/projects/gembridge.png",
   },

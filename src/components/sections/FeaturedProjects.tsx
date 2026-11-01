@@ -32,10 +32,12 @@ const techLogos: Record<string, string> = {
   "Java": "java",
   "JavaScript": "javascript",
   "Next.js": "nextjs",
+  "PowerShell": "powershell",
   "Python": "python",
   "Railway": "railway",
   "React.js": "react",
   "Redis": "redis",
+  "Rust": "rust",
   "Spring Boot": "springboot",
   "Supabase": "supabase",
   "Tailscale": "tailscale",
@@ -199,7 +201,7 @@ export default function FeaturedProjects() {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.slice(0, 4).map((tag, tagIndex) => (
+                    {project.tags.map((tag, tagIndex) => (
                       <TechBadge key={tagIndex} tag={tag} />
                     ))}
                   </div>
