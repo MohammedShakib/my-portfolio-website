@@ -24,6 +24,7 @@ const Github = ({ size = 24 }: { size?: number }) => (
 const additionalProjectsPreviewCount = 3;
 
 const techLogos: Record<string, string> = {
+  "Chrome Extension": "googlechrome",
   "CSS": "css3",
   "Express.js": "express",
   "Firebase": "firebase",
@@ -37,6 +38,8 @@ const techLogos: Record<string, string> = {
   "Redis": "redis",
   "Spring Boot": "springboot",
   "Supabase": "supabase",
+  "Tailscale": "tailscale",
+  "Tauri": "tauri",
   "Tailwind CSS": "tailwindcss",
   "TypeScript": "typescript",
 };
